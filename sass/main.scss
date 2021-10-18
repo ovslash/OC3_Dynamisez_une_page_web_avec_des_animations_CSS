@@ -1,0 +1,64 @@
+Body {
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+}
+
+/* header */
+.header {
+  &__logo {
+    font-size: xx-large;
+    font-family: "Shrikhand", cursive;
+  }
+  &__retour {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+  }
+}
+
+/* section recherche restaurants */
+.recherche-restaurants {
+  background-color: #f6f6f6;
+
+  &__localisation {
+    background-color: #eaeaea;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    i {
+      margin-right: 15px;
+    }
+  }
+}
+
+/* section fonctionnement */
+
+/* section restaurants */
+.restaurants {
+  background-color: #f6f6f6;
+}
+
+/* footer */
+footer {
+  background-color: #353535;
+  color: white;
+  text-align: left;
+  padding: 15px 20px 30px 20px;
+  h3 {
+    font-family: "Shrikhand", cursive;
+  }
+  ul {
+    list-style-type: none;
+    padding: 0;
+    div {
+      display: flex;
+      align-items: baseline;
+      p {
+        margin: 0;
+      }
+    }
+    li {
+      margin: 5px 0 5px 0;
+    }
+  }
+}
