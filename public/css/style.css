@@ -1,12 +1,25 @@
 Body {
   text-align: center;
   font-family: "Roboto", sans-serif;
+  margin: 0;
+}
+
+a {
+  color: black;
+  text-decoration: none;
 }
 
 /* header */
+.header {
+  height: 60px;
+  box-shadow: 0px 3px 3px #c5c5c5;
+  margin-bottom: 3px;
+}
 .header__logo {
   font-size: xx-large;
   font-family: "Shrikhand", cursive;
+  margin-top: 0;
+  padding-top: 10px;
 }
 .header__retour {
   position: absolute;
@@ -19,6 +32,7 @@ Body {
   background-color: #f6f6f6;
 }
 .recherche-restaurants__localisation {
+  height: 50px;
   background-color: #eaeaea;
   display: flex;
   justify-content: center;
@@ -27,11 +41,113 @@ Body {
 .recherche-restaurants__localisation i {
   margin-right: 15px;
 }
+.recherche-restaurants__explorer {
+  padding-bottom: 50px;
+}
+.recherche-restaurants__explorer p {
+  padding: 0px 15px 0px 15px;
+  margin-bottom: 30px;
+}
+.recherche-restaurants__titre {
+  padding-top: 40px;
+  margin: 0 20px 0 20px;
+}
+
+/* bouton */
+.bouton {
+  background: linear-gradient(to top left, #9356dc, #ff79da);
+  color: white;
+  border-radius: 2rem;
+  border: none;
+  font-size: 1rem;
+  padding: 15px;
+  box-shadow: 1px 4px 10px #c5c5c5;
+}
 
 /* section fonctionnement */
+.fonctionnement__titre {
+  text-align: left;
+  margin: 40px 0px 0px 20px;
+}
+.fonctionnement__vignettes {
+  padding-bottom: 1px;
+}
+
+.vignette-fonctionnement {
+  display: flex;
+  align-items: center;
+  background-color: #f6f6f6;
+  margin: 30px 20px 30px 20px;
+  border-radius: 2rem;
+  box-shadow: 1px 4px 10px #c5c5c5;
+  justify-content: center;
+}
+.vignette-fonctionnement p {
+  padding: 10px 0 10px 0;
+}
+.vignette-fonctionnement__chiffre {
+  display: flex;
+  background: #9356dc;
+  height: 25px;
+  width: 25px;
+  justify-content: center;
+  border-radius: 100px;
+  color: white;
+  font-size: 0.9rem;
+  align-items: center;
+  position: absolute;
+  left: 8px;
+}
+.vignette-fonctionnement i {
+  color: #7e7e7e;
+  font-size: 1.2rem;
+  position: absolute;
+  left: 15%;
+}
+
 /* section restaurants */
 .restaurants {
   background-color: #f6f6f6;
+  /* &__liens {
+    text-decoration: none;
+    color: black;
+  } */
+}
+.restaurants__titre {
+  text-align: left;
+  margin: 40px 0px 0px 20px;
+  padding-top: 50px;
+}
+
+.vignette-restaurants {
+  background: white;
+  border-radius: 1.5rem;
+  margin: 20px;
+  text-decoration: none;
+}
+.vignette-restaurants__image {
+  object-fit: cover;
+  width: 100%;
+  border-radius: 1.5rem 1.5rem 0 0;
+  height: inherit;
+}
+.vignette-restaurants__details {
+  display: flex;
+  justify-content: space-between;
+}
+.vignette-restaurants__details__description {
+  text-align: left;
+  margin: 0 20px 0 20px;
+}
+.vignette-restaurants__details__description h4 {
+  margin: 10px 0 10px 0;
+}
+.vignette-restaurants__details__description p {
+  margin: 10px 0 10px 0;
+}
+.vignette-restaurants__details i {
+  font-size: 1.5rem;
+  margin: 10px 20px 0 0;
 }
 
 /* footer */

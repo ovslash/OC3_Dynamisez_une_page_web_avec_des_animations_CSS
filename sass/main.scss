@@ -1,13 +1,24 @@
 Body {
   text-align: center;
   font-family: "Roboto", sans-serif;
+  margin: 0;
+}
+
+a {
+  color: black;
+  text-decoration: none;
 }
 
 /* header */
 .header {
+  height: 60px;
+  box-shadow: 0px 3px 3px #c5c5c5;
+  margin-bottom: 3px;
   &__logo {
     font-size: xx-large;
     font-family: "Shrikhand", cursive;
+    margin-top: 0;
+    padding-top: 10px;
   }
   &__retour {
     position: absolute;
@@ -21,6 +32,7 @@ Body {
   background-color: #f6f6f6;
 
   &__localisation {
+    height: 50px;
     background-color: #eaeaea;
     display: flex;
     justify-content: center;
@@ -29,13 +41,117 @@ Body {
       margin-right: 15px;
     }
   }
+  &__explorer {
+    padding-bottom: 50px;
+    p {
+      padding: 0px 15px 0px 15px;
+      margin-bottom: 30px;
+    }
+  }
+  &__titre {
+    padding-top: 40px;
+    margin: 0 20px 0 20px;
+  }
+}
+
+/* bouton */
+.bouton {
+  background: linear-gradient(to top left, #9356dc, #ff79da);
+  color: white;
+  border-radius: 2rem;
+  border: none;
+  font-size: 1rem;
+  padding: 15px;
+  box-shadow: 1px 4px 10px #c5c5c5;
 }
 
 /* section fonctionnement */
 
+.fonctionnement {
+  &__titre {
+    text-align: left;
+    margin: 40px 0px 0px 20px;
+  }
+  &__vignettes {
+    padding-bottom: 1px;
+  }
+}
+
+.vignette-fonctionnement {
+  display: flex;
+  align-items: center;
+  background-color: #f6f6f6;
+  margin: 30px 20px 30px 20px;
+  border-radius: 2rem;
+  box-shadow: 1px 4px 10px #c5c5c5;
+  justify-content: center;
+  p {
+    padding: 10px 0 10px 0;
+  }
+  &__chiffre {
+    display: flex;
+    background: #9356dc;
+    height: 25px;
+    width: 25px;
+    justify-content: center;
+    border-radius: 100px;
+    color: white;
+    font-size: 0.9rem;
+    align-items: center;
+    position: absolute;
+    left: 8px;
+  }
+  i {
+    color: #7e7e7e;
+    font-size: 1.2rem;
+    position: absolute;
+    left: 15%;
+  }
+}
+
 /* section restaurants */
 .restaurants {
   background-color: #f6f6f6;
+  &__titre {
+    text-align: left;
+    margin: 40px 0px 0px 20px;
+    padding-top: 50px;
+  }
+  /* &__liens {
+    text-decoration: none;
+    color: black;
+  } */
+}
+
+.vignette-restaurants {
+  background: white;
+  border-radius: 1.5rem;
+  margin: 20px;
+  text-decoration: none;
+  &__image {
+    object-fit: cover;
+    width: 100%;
+    border-radius: 1.5rem 1.5rem 0 0;
+    height: inherit;
+  }
+  &__details {
+    display: flex;
+    justify-content: space-between;
+    &__description {
+      text-align: left;
+      margin: 0 20px 0 20px;
+      h4 {
+        margin: 10px 0 10px 0;
+      }
+      p {
+        margin: 10px 0 10px 0;
+      }
+    }
+    i {
+      font-size: 1.5rem;
+      margin: 10px 20px 0 0;
+    }
+  }
 }
 
 /* footer */
