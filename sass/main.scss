@@ -22,7 +22,7 @@ a {
   }
   &__retour {
     position: absolute;
-    top: 2rem;
+    top: 1.5rem;
     left: 2rem;
   }
 }
@@ -55,14 +55,36 @@ a {
 }
 
 /* bouton */
+$bouton-couleur: linear-gradient(to top left, #9356dc, #ff79da);
 .bouton {
-  background: linear-gradient(to top left, #9356dc, #ff79da);
+  background: $bouton-couleur;
   color: white;
   border-radius: 2rem;
   border: none;
   font-size: 1rem;
   padding: 15px;
   box-shadow: 1px 4px 10px #c5c5c5;
+  position: relative;
+  z-index: 1;
+  &:hover {
+    &::after {
+      opacity: 0.2;
+      box-shadow: 1px 4px 10px #3b3b3b;
+    }
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 250ms;
+    border-radius: 2rem;
+  }
 }
 
 /* section fonctionnement */
@@ -175,6 +197,55 @@ footer {
     }
     li {
       margin: 5px 0 5px 0;
+    }
+  }
+}
+
+/* --------------------------------- Page restaurants ----------------------------- */
+
+.restaurant {
+  padding: 0 15px 0 15px;
+  background-color: #f6f6f6;
+  border-radius: 3rem 3rem 0 0;
+  position: relative;
+  z-index: 1;
+  margin-top: -50px;
+  &__photo {
+    width: 100%;
+    margin-top: -2px;
+  }
+  &__titre {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Shrikhand", cursive;
+    font-size: 0.9rem;
+    font-weight: 400;
+    i {
+      font-size: 1.5rem;
+      padding-right: 20px;
+    }
+  }
+  &__menu {
+    text-align: start;
+    &__titre {
+      font-size: 1.1rem;
+      font-weight: 400;
+    }
+    &__vignette {
+      display: flex;
+      background-color: white;
+      align-items: last baseline;
+      justify-content: space-between;
+      border-radius: 1rem;
+      box-shadow: 1px 4px 10px #c5c5c5;
+      padding-left: 10px;
+      &__plat {
+      }
+      &__prix {
+        font-weight: bold;
+        padding-right: 10px;
+      }
     }
   }
 }
