@@ -1,3 +1,48 @@
+/* variables */
+$box-shadow: #c5c5c5;
+$fond: #f6f6f6;
+$couleur-primaire: #9356dc;
+$couleur-secondaire: #ff79da;
+$couleur-tertiaire: #99e2d0;
+$temps-mot: 0.5s;
+
+/* keyframe */
+@keyframes anim-mots {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+    transform: rotate(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    transform: rotate(720deg);
+  }
+}
+
+@keyframes anim-boite {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  20% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  40% {
+    opacity: 0.3;
+    transform: scale(0.3);
+  }
+  60% {
+    transform: scale(1.4);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+/* fin keyframe */
+
 Body {
   text-align: center;
   font-family: "Roboto", sans-serif;
@@ -9,10 +54,44 @@ a {
   text-decoration: none;
 }
 
+/* animation intro */
+.boite-intro {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Shrikhand", cursive;
+  font-size: 4rem;
+  animation: anim-boite 1s $temps-mot * 3;
+  &__mot1 {
+    opacity: 0;
+    color: $couleur-primaire;
+    animation: anim-mots $temps-mot ease-in-out;
+    animation-fill-mode: forwards;
+  }
+  &__mot2 {
+    opacity: 0;
+    color: $couleur-secondaire;
+    animation: anim-mots $temps-mot $temps-mot ease-in-out;
+    animation-fill-mode: forwards;
+  }
+  &__mot3 {
+    opacity: 0;
+    color: $couleur-tertiaire;
+    animation: anim-mots $temps-mot $temps-mot * 2 ease-in-out;
+    animation-fill-mode: forwards;
+  }
+}
+/* fin animation intro */
+
 /* header */
 .header {
   height: 60px;
-  box-shadow: 0px 3px 3px #c5c5c5;
+  box-shadow: 0px 3px 3px $box-shadow;
   margin-bottom: 3px;
   &__logo {
     font-size: xx-large;
@@ -29,7 +108,7 @@ a {
 
 /* section recherche restaurants */
 .recherche-restaurants {
-  background-color: #f6f6f6;
+  background-color: $fond;
 
   &__localisation {
     height: 50px;
@@ -55,7 +134,11 @@ a {
 }
 
 /* bouton */
-$bouton-couleur: linear-gradient(to top left, #9356dc, #ff79da);
+$bouton-couleur: linear-gradient(
+  to top left,
+  $couleur-primaire,
+  $couleur-secondaire
+);
 .bouton {
   background: $bouton-couleur;
   color: white;
@@ -63,7 +146,7 @@ $bouton-couleur: linear-gradient(to top left, #9356dc, #ff79da);
   border: none;
   font-size: 1rem;
   padding: 15px;
-  box-shadow: 1px 4px 10px #c5c5c5;
+  box-shadow: 1px 4px 10px $box-shadow;
   position: relative;
   z-index: 1;
   &:hover {
@@ -102,17 +185,17 @@ $bouton-couleur: linear-gradient(to top left, #9356dc, #ff79da);
 .vignette-fonctionnement {
   display: flex;
   align-items: center;
-  background-color: #f6f6f6;
+  background-color: $fond;
   margin: 30px 20px 30px 20px;
   border-radius: 2rem;
-  box-shadow: 1px 4px 10px #c5c5c5;
+  box-shadow: 1px 4px 10px $box-shadow;
   justify-content: center;
   p {
     padding: 10px 0 10px 0;
   }
   &__chiffre {
     display: flex;
-    background: #9356dc;
+    background: $couleur-primaire;
     height: 25px;
     width: 25px;
     justify-content: center;
@@ -133,7 +216,7 @@ $bouton-couleur: linear-gradient(to top left, #9356dc, #ff79da);
 
 /* section restaurants */
 .restaurants {
-  background-color: #f6f6f6;
+  background-color: $fond;
   &__titre {
     text-align: left;
     margin: 40px 0px 0px 20px;
@@ -165,9 +248,26 @@ $bouton-couleur: linear-gradient(to top left, #9356dc, #ff79da);
         margin: 10px 0 10px 0;
       }
     }
-    i {
+    &__favoris {
       font-size: 1.5rem;
       margin: 10px 20px 0 0;
+      opacity: 1;
+      z-index: 2;
+      &:hover {
+        opacity: 0;
+      }
+
+      &--actif {
+        background: -webkit-linear-gradient(
+          $couleur-primaire,
+          $couleur-secondaire
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        position: relative;
+        left: -40px;
+        font-size: 1.5rem;
+      }
     }
   }
 }
@@ -201,7 +301,7 @@ footer {
 
 .restaurant {
   padding: 0 15px 0 15px;
-  background-color: #f6f6f6;
+  background-color: $fond;
   border-radius: 3rem 3rem 0 0;
   position: relative;
   z-index: 1;
@@ -231,16 +331,57 @@ footer {
     &__vignette {
       display: flex;
       background-color: white;
-      align-items: last baseline;
       justify-content: space-between;
       border-radius: 1rem;
-      box-shadow: 1px 4px 10px #c5c5c5;
-      padding-left: 10px;
+      box-shadow: 1px 4px 10px $box-shadow;
+
+      overflow: hidden;
+      padding: 20px 0 20px 20px;
+      /* BOUTON VALIDATION ANIMATION ------------------------------------ */
+      &:hover &__bouton {
+        opacity: 1;
+        transform: scaleX(1);
+
+        &--anim {
+          transform: rotate(180deg);
+        }
+      }
+
       &__plat {
+        &__titre {
+          margin: 0;
+        }
+        &__description {
+          margin: 0;
+        }
       }
       &__prix {
         font-weight: bold;
-        padding-right: 10px;
+        padding-right: 20px;
+
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+      }
+      &__bouton {
+        background-color: $couleur-tertiaire;
+        width: 20%;
+        transform: scaleX(0.1);
+        margin: -20px 0 -20px 0;
+        border-radius: 0 1rem 1rem 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        transition: transform 0.5s ease-in-out;
+        font-size: 1.5rem;
+        opacity: 0;
+        transform-origin: right;
+
+        &--anim {
+          rotate: 180deg;
+          transition: transform 0.5s ease-in-out;
+        }
       }
     }
   }
