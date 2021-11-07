@@ -4,7 +4,7 @@ $fond: #f6f6f6;
 $couleur-primaire: #9356dc;
 $couleur-secondaire: #ff79da;
 $couleur-tertiaire: #99e2d0;
-$temps-mot: 0.5s;
+$temps-mot: 0.8s;
 
 /* keyframe */
 @keyframes anim-mots {
@@ -20,7 +20,7 @@ $temps-mot: 0.5s;
   }
 }
 
-@keyframes anim-boite {
+/*  @keyframes anim-boite {
   0% {
     opacity: 1;
     transform: scale(1);
@@ -40,7 +40,17 @@ $temps-mot: 0.5s;
     opacity: 1;
     transform: scale(1);
   }
+} */
+
+@keyframes anim-boite {
+  0% {
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0) rotate(720deg);
+  }
 }
+
 /* fin keyframe */
 
 Body {
@@ -54,7 +64,7 @@ a {
   text-decoration: none;
 }
 
-/* animation intro */
+/* animation intro */ /* voir pour extension !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
 .boite-intro {
   position: fixed;
   height: 100%;
@@ -66,11 +76,14 @@ a {
   align-items: center;
   font-family: "Shrikhand", cursive;
   font-size: 4rem;
-  animation: anim-boite 1s $temps-mot * 3;
+  animation: anim-boite 1s $temps-mot * 3 forwards;
+  background-color: white;
+  z-index: 5;
+  opacity: 1;
   &__mot1 {
     opacity: 0;
     color: $couleur-primaire;
-    animation: anim-mots $temps-mot ease-in-out;
+    animation: anim-mots $temps-mot;
     animation-fill-mode: forwards;
   }
   &__mot2 {

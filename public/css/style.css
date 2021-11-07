@@ -12,7 +12,7 @@
     transform: rotate(720deg);
   }
 }
-@keyframes anim-boite {
+/*  @keyframes anim-boite {
   0% {
     opacity: 1;
     transform: scale(1);
@@ -32,6 +32,12 @@
     opacity: 1;
     transform: scale(1);
   }
+} */
+@keyframes anim-boite {
+  100% {
+    opacity: 0;
+    transform: scale(0) rotate(720deg);
+  }
 }
 /* fin keyframe */
 Body {
@@ -46,6 +52,7 @@ a {
 }
 
 /* animation intro */
+/* voir pour extension !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
 .boite-intro {
   position: fixed;
   height: 100%;
@@ -57,24 +64,27 @@ a {
   align-items: center;
   font-family: "Shrikhand", cursive;
   font-size: 4rem;
-  animation: anim-boite 1s 1.5s;
+  animation: anim-boite 1s 2.4s forwards;
+  background-color: white;
+  z-index: 5;
+  opacity: 1;
 }
 .boite-intro__mot1 {
   opacity: 0;
   color: #9356dc;
-  animation: anim-mots 0.5s ease-in-out;
+  animation: anim-mots 0.8s;
   animation-fill-mode: forwards;
 }
 .boite-intro__mot2 {
   opacity: 0;
   color: #ff79da;
-  animation: anim-mots 0.5s 0.5s ease-in-out;
+  animation: anim-mots 0.8s 0.8s ease-in-out;
   animation-fill-mode: forwards;
 }
 .boite-intro__mot3 {
   opacity: 0;
   color: #99e2d0;
-  animation: anim-mots 0.5s 1s ease-in-out;
+  animation: anim-mots 0.8s 1.6s ease-in-out;
   animation-fill-mode: forwards;
 }
 
