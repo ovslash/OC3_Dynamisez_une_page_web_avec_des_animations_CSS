@@ -282,6 +282,9 @@ footer ul div p {
 footer ul li {
   margin: 5px 0 5px 0;
 }
+footer ul li i {
+  padding-right: 10px;
+}
 
 /* --------------------------------- Page restaurants ----------------------------- */
 .restaurant {
