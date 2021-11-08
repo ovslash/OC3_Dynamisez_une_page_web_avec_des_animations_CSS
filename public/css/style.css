@@ -56,6 +56,16 @@
     transform: scaleX(10) scaleY(10);
   }
 }
+@keyframes anim-plats {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 /* fin keyframe */
 Body {
   text-align: center;
@@ -322,6 +332,7 @@ footer ul li i {
   border-radius: 3rem 3rem 0 0;
   position: relative;
   margin-top: -50px;
+  padding-bottom: 60px;
 }
 .restaurant__photo {
   width: 100%;
@@ -341,6 +352,7 @@ footer ul li i {
 }
 .restaurant__menu {
   text-align: start;
+  margin-bottom: 35px;
 }
 .restaurant__menu__titre {
   font-size: 1.1rem;
@@ -349,6 +361,7 @@ footer ul li i {
 .restaurant__menu__vignette {
   display: flex;
   background-color: white;
+  margin-bottom: 15px;
   border-radius: 1rem;
   box-shadow: 1px 4px 10px #c5c5c5;
   overflow: hidden;
@@ -406,6 +419,19 @@ footer ul li i {
 .restaurant__menu__vignette__bouton--anim {
   rotate: 180deg;
   transition: transform 0.5s ease-in-out;
+}
+
+/* anim pour les plats */
+.e1 {
+  animation: anim-plats 0.5s ease-in-out both;
+}
+
+.e2 {
+  animation: anim-plats 0.5s 0.25s ease-in-out both;
+}
+
+.e3 {
+  animation: anim-plats 0.5s 0.5s ease-in-out both;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -5,6 +5,7 @@ $couleur-primaire: #9356dc;
 $couleur-secondaire: #ff79da;
 $couleur-tertiaire: #99e2d0;
 $temps-mot: 0.8s;
+$temps-plats: 0.5s;
 $bouton-couleur: linear-gradient(
   to top left,
   $couleur-primaire,
@@ -72,6 +73,17 @@ $bouton-couleur: linear-gradient(
   100% {
     opacity: 1;
     transform: scaleX(10) scaleY(10);
+  }
+}
+
+@keyframes anim-plats {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
   }
 }
 /* fin keyframe */
@@ -350,8 +362,8 @@ footer {
   background-color: $fond;
   border-radius: 3rem 3rem 0 0;
   position: relative;
-
   margin-top: -50px;
+  padding-bottom: 60px;
   &__photo {
     width: 100%;
     margin-top: -2px;
@@ -370,6 +382,7 @@ footer {
   }
   &__menu {
     text-align: start;
+    margin-bottom: 35px;
     &__titre {
       font-size: 1.1rem;
       font-weight: 400;
@@ -377,7 +390,7 @@ footer {
     &__vignette {
       display: flex;
       background-color: white;
-
+      margin-bottom: 15px;
       border-radius: 1rem;
       box-shadow: 1px 4px 10px $box-shadow;
 
@@ -443,4 +456,16 @@ footer {
       }
     }
   }
+}
+
+/* anim pour les plats */
+
+.e1 {
+  animation: anim-plats $temps-plats ease-in-out both;
+}
+.e2 {
+  animation: anim-plats $temps-plats $temps-plats * 0.5 ease-in-out both;
+}
+.e3 {
+  animation: anim-plats $temps-plats $temps-plats * 1 ease-in-out both;
 }
