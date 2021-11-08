@@ -350,7 +350,7 @@ footer {
   background-color: $fond;
   border-radius: 3rem 3rem 0 0;
   position: relative;
-  z-index: 1;
+
   margin-top: -50px;
   &__photo {
     width: 100%;
@@ -377,33 +377,47 @@ footer {
     &__vignette {
       display: flex;
       background-color: white;
-      justify-content: space-between;
+
       border-radius: 1rem;
       box-shadow: 1px 4px 10px $box-shadow;
 
       overflow: hidden;
       padding: 20px 0 20px 20px;
+
+      white-space: nowrap;
+      text-overflow: ellipsis;
+
       /* BOUTON VALIDATION ANIMATION ------------------------------------ */
       &:hover &__bouton {
         opacity: 1;
-        transform: scaleX(1);
-
+        width: 90px;
         &--anim {
           transform: rotate(180deg);
         }
       }
+      &:hover &__plat {
+        width: 90px;
+      }
 
       &__plat {
+        flex: 1;
+
         &__titre {
           margin: 0;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden;
         }
         &__description {
           margin: 0;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden;
         }
       }
       &__prix {
         font-weight: bold;
-        padding-right: 20px;
+        padding: 0 20px 0 20px;
 
         display: flex;
         justify-content: flex-end;
@@ -411,19 +425,17 @@ footer {
       }
       &__bouton {
         background-color: $couleur-tertiaire;
-        width: 20%;
-        transform: scaleX(0.1);
+        width: 0;
+        transition: width 2s;
         margin: -20px 0 -20px 0;
         border-radius: 0 1rem 1rem 0;
         display: flex;
         align-items: center;
         justify-content: center;
         color: white;
-        transition: transform 0.5s ease-in-out;
         font-size: 1.5rem;
-        opacity: 0;
+        opacity: 0.5;
         transform-origin: right;
-
         &--anim {
           rotate: 180deg;
           transition: transform 0.5s ease-in-out;

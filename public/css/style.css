@@ -321,7 +321,6 @@ footer ul li i {
   background-color: #f6f6f6;
   border-radius: 3rem 3rem 0 0;
   position: relative;
-  z-index: 1;
   margin-top: -50px;
 }
 .restaurant__photo {
@@ -350,46 +349,58 @@ footer ul li i {
 .restaurant__menu__vignette {
   display: flex;
   background-color: white;
-  justify-content: space-between;
   border-radius: 1rem;
   box-shadow: 1px 4px 10px #c5c5c5;
   overflow: hidden;
   padding: 20px 0 20px 20px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   /* BOUTON VALIDATION ANIMATION ------------------------------------ */
 }
 .restaurant__menu__vignette:hover .restaurant__menu__vignette__bouton {
   opacity: 1;
-  transform: scaleX(1);
+  width: 90px;
 }
 .restaurant__menu__vignette:hover .restaurant__menu__vignette__bouton--anim {
   transform: rotate(180deg);
 }
+.restaurant__menu__vignette:hover .restaurant__menu__vignette__plat {
+  width: 90px;
+}
+.restaurant__menu__vignette__plat {
+  flex: 1;
+}
 .restaurant__menu__vignette__plat__titre {
   margin: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 .restaurant__menu__vignette__plat__description {
   margin: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 .restaurant__menu__vignette__prix {
   font-weight: bold;
-  padding-right: 20px;
+  padding: 0 20px 0 20px;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
 }
 .restaurant__menu__vignette__bouton {
   background-color: #99e2d0;
-  width: 20%;
-  transform: scaleX(0.1);
+  width: 0;
+  transition: width 2s;
   margin: -20px 0 -20px 0;
   border-radius: 0 1rem 1rem 0;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
-  transition: transform 0.5s ease-in-out;
   font-size: 1.5rem;
-  opacity: 0;
+  opacity: 0.5;
   transform-origin: right;
 }
 .restaurant__menu__vignette__bouton--anim {
