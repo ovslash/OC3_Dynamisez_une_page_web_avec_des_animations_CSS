@@ -5,6 +5,11 @@ $couleur-primaire: #9356dc;
 $couleur-secondaire: #ff79da;
 $couleur-tertiaire: #99e2d0;
 $temps-mot: 0.8s;
+$bouton-couleur: linear-gradient(
+  to top left,
+  $couleur-primaire,
+  $couleur-secondaire
+);
 
 /* keyframe */
 @keyframes anim-mots {
@@ -51,6 +56,24 @@ $temps-mot: 0.8s;
   }
 }
 
+@keyframes favoris {
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes favoris-actif {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: scaleX(10) scaleY(10);
+  }
+}
 /* fin keyframe */
 
 Body {
@@ -146,12 +169,6 @@ a {
   }
 }
 
-/* bouton */
-$bouton-couleur: linear-gradient(
-  to top left,
-  $couleur-primaire,
-  $couleur-secondaire
-);
 .bouton {
   background: $bouton-couleur;
   color: white;
@@ -265,9 +282,14 @@ $bouton-couleur: linear-gradient(
       font-size: 1.5rem;
       margin: 10px 20px 0 0;
       opacity: 1;
-      z-index: 2;
+      position: absolute;
+      right: 40px;
+      z-index: 3;
       &:hover {
-        opacity: 0;
+        animation: favoris 1s forwards;
+        & + .vignette-restaurants__details__favoris--actif {
+          animation: favoris-actif 1s ease-in-out forwards;
+        }
       }
 
       &--actif {
@@ -279,7 +301,11 @@ $bouton-couleur: linear-gradient(
         -webkit-text-fill-color: transparent;
         position: relative;
         left: -40px;
+        top: 10px;
         font-size: 1.5rem;
+        opacity: 0;
+        z-index: 1;
+        scale: 0.1;
       }
     }
   }

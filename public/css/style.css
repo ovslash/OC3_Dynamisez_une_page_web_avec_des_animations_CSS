@@ -39,6 +39,23 @@
     transform: scale(0) rotate(720deg);
   }
 }
+@keyframes favoris {
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes favoris-actif {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: scaleX(10) scaleY(10);
+  }
+}
 /* fin keyframe */
 Body {
   text-align: center;
@@ -133,7 +150,6 @@ a {
   margin: 0 20px 0 20px;
 }
 
-/* bouton */
 .bouton {
   background: linear-gradient(to top left, #9356dc, #ff79da);
   color: white;
@@ -244,10 +260,15 @@ a {
   font-size: 1.5rem;
   margin: 10px 20px 0 0;
   opacity: 1;
-  z-index: 2;
+  position: absolute;
+  right: 40px;
+  z-index: 3;
 }
 .vignette-restaurants__details__favoris:hover {
-  opacity: 0;
+  animation: favoris 1s forwards;
+}
+.vignette-restaurants__details__favoris:hover + .vignette-restaurants__details__favoris--actif {
+  animation: favoris-actif 1s ease-in-out forwards;
 }
 .vignette-restaurants__details__favoris--actif {
   background: -webkit-linear-gradient(#9356dc, #ff79da);
@@ -255,7 +276,11 @@ a {
   -webkit-text-fill-color: transparent;
   position: relative;
   left: -40px;
+  top: 10px;
   font-size: 1.5rem;
+  opacity: 0;
+  z-index: 1;
+  scale: 0.1;
 }
 
 /* footer */
