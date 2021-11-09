@@ -1,16 +1,11 @@
-/* variables */
-$box-shadow: #c5c5c5;
-$fond: #f6f6f6;
-$couleur-primaire: #9356dc;
-$couleur-secondaire: #ff79da;
-$couleur-tertiaire: #99e2d0;
-$temps-mot: 0.8s;
-$temps-plats: 0.5s;
-$bouton-couleur: linear-gradient(
-  to top left,
-  $couleur-primaire,
-  $couleur-secondaire
-);
+/* ----------------------- IMPORTS ----------------------------------------- */
+
+@import "./utils/variables";
+@import "./components/bouton";
+@import "./layout/header";
+@import "./layout/footer";
+
+/* ------------------------------------------------------------------------- */
 
 /* keyframe */
 @keyframes anim-mots {
@@ -25,28 +20,6 @@ $bouton-couleur: linear-gradient(
     transform: rotate(720deg);
   }
 }
-
-/*  @keyframes anim-boite {
-  0% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  20% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  40% {
-    opacity: 0.3;
-    transform: scale(0.3);
-  }
-  60% {
-    transform: scale(1.4);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-} */
 
 @keyframes anim-boite {
   0% {
@@ -136,8 +109,8 @@ a {
 }
 /* fin animation intro */
 
-/* header */
-.header {
+/* header ---------------------------------------------- mis dans ./utils/_header.scss*/
+/* .header {
   height: 60px;
   box-shadow: 0px 3px 3px $box-shadow;
   margin-bottom: 3px;
@@ -153,6 +126,7 @@ a {
     left: 2rem;
   }
 }
+*/
 
 /* section recherche restaurants */
 .recherche-restaurants {
@@ -181,7 +155,8 @@ a {
   }
 }
 
-.bouton {
+/* bouton ------------------------------------------mis dans ./components/_bouton.scss */
+/* .bouton {
   background: $bouton-couleur;
   color: white;
   border-radius: 2rem;
@@ -210,7 +185,7 @@ a {
     transition: opacity 250ms;
     border-radius: 2rem;
   }
-}
+}*/
 
 /* section fonctionnement */
 
@@ -294,23 +269,17 @@ a {
     }
     &__favoris {
       position: relative;
-
       top: 10px;
-
-      &--actif {
-        position: relative;
-        top: 10px;
-        right: 28px;
-      }
+      right: 10px;
     }
   }
 }
 /* -------------------------------------------------------------------------------*/
 .favoris {
   font-size: 1.5rem;
-
   opacity: 1;
   z-index: 3;
+  position: relative;
   &:hover {
     animation: favoris 1s forwards;
     & + .favoris--actif {
@@ -319,6 +288,8 @@ a {
   }
 
   &--actif {
+    position: absolute;
+    right: 0;
     background: -webkit-linear-gradient($couleur-primaire, $couleur-secondaire);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -331,8 +302,8 @@ a {
 
 /* ----------------------------------------------------------------------*/
 
-/* footer */
-footer {
+/* footer ---------------------------------------------- mis dans ./utils/_footer.scss */
+/* footer {
   background-color: #353535;
   color: white;
   text-align: left;
@@ -358,7 +329,7 @@ footer {
       }
     }
   }
-}
+} */
 
 /* --------------------------------- Page restaurants ----------------------------- */
 
@@ -402,10 +373,8 @@ footer {
       margin-bottom: 15px;
       border-radius: 1rem;
       box-shadow: 1px 4px 10px $box-shadow;
-
       overflow: hidden;
       padding: 20px 0 20px 20px;
-
       white-space: nowrap;
       text-overflow: ellipsis;
 
@@ -440,7 +409,6 @@ footer {
       &__prix {
         font-weight: bold;
         padding: 0 20px 0 20px;
-
         display: flex;
         justify-content: flex-end;
         align-items: flex-end;

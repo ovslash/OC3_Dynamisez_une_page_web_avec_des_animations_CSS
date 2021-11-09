@@ -1,0 +1,30 @@
+.bouton {
+  background: $bouton-couleur;
+  color: white;
+  border-radius: 2rem;
+  border: none;
+  font-size: 1rem;
+  padding: 15px;
+  box-shadow: 1px 4px 10px $box-shadow;
+  position: relative;
+  z-index: 1;
+  &:hover {
+    &::after {
+      opacity: 0.2;
+      box-shadow: 1px 4px 10px #3b3b3b;
+    }
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 250ms;
+    border-radius: 2rem;
+  }
+}

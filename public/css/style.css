@@ -1,4 +1,79 @@
-/* variables */
+/* ----------------------- IMPORTS ----------------------------------------- */
+.bouton {
+  background: linear-gradient(to top left, #9356dc, #ff79da);
+  color: white;
+  border-radius: 2rem;
+  border: none;
+  font-size: 1rem;
+  padding: 15px;
+  box-shadow: 1px 4px 10px #c5c5c5;
+  position: relative;
+  z-index: 1;
+}
+.bouton:hover::after {
+  opacity: 0.2;
+  box-shadow: 1px 4px 10px #3b3b3b;
+}
+.bouton::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0px;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 250ms;
+  border-radius: 2rem;
+}
+
+.header {
+  height: 60px;
+  box-shadow: 0px 3px 3px #c5c5c5;
+  margin-bottom: 3px;
+}
+.header__logo {
+  font-size: xx-large;
+  font-family: "Shrikhand", cursive;
+  margin-top: 0;
+  padding-top: 10px;
+}
+.header__retour {
+  position: absolute;
+  top: 1.5rem;
+  left: 2rem;
+}
+
+footer {
+  background-color: #353535;
+  color: white;
+  text-align: left;
+  padding: 15px 20px 30px 20px;
+}
+footer h3 {
+  font-family: "Shrikhand", cursive;
+}
+footer ul {
+  list-style-type: none;
+  padding: 0;
+}
+footer ul div {
+  display: flex;
+  align-items: baseline;
+}
+footer ul div p {
+  margin: 0;
+}
+footer ul li {
+  margin: 5px 0 5px 0;
+}
+footer ul li i {
+  padding-right: 10px;
+  width: 15px;
+}
+
+/* ------------------------------------------------------------------------- */
 /* keyframe */
 @keyframes anim-mots {
   0% {
@@ -12,27 +87,6 @@
     transform: rotate(720deg);
   }
 }
-/*  @keyframes anim-boite {
-  0% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  20% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  40% {
-    opacity: 0.3;
-    transform: scale(0.3);
-  }
-  60% {
-    transform: scale(1.4);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-} */
 @keyframes anim-boite {
   100% {
     opacity: 0;
@@ -116,24 +170,24 @@ a {
 }
 
 /* fin animation intro */
-/* header */
-.header {
+/* header ---------------------------------------------- mis dans ./utils/_header.scss*/
+/* .header {
   height: 60px;
-  box-shadow: 0px 3px 3px #c5c5c5;
+  box-shadow: 0px 3px 3px $box-shadow;
   margin-bottom: 3px;
+  &__logo {
+    font-size: xx-large;
+    font-family: "Shrikhand", cursive;
+    margin-top: 0;
+    padding-top: 10px;
+  }
+  &__retour {
+    position: absolute;
+    top: 1.5rem;
+    left: 2rem;
+  }
 }
-.header__logo {
-  font-size: xx-large;
-  font-family: "Shrikhand", cursive;
-  margin-top: 0;
-  padding-top: 10px;
-}
-.header__retour {
-  position: absolute;
-  top: 1.5rem;
-  left: 2rem;
-}
-
+*/
 /* section recherche restaurants */
 .recherche-restaurants {
   background-color: #f6f6f6;
@@ -160,35 +214,37 @@ a {
   margin: 0 20px 0 20px;
 }
 
-.bouton {
-  background: linear-gradient(to top left, #9356dc, #ff79da);
+/* bouton ------------------------------------------mis dans ./components/_bouton.scss */
+/* .bouton {
+  background: $bouton-couleur;
   color: white;
   border-radius: 2rem;
   border: none;
   font-size: 1rem;
   padding: 15px;
-  box-shadow: 1px 4px 10px #c5c5c5;
+  box-shadow: 1px 4px 10px $box-shadow;
   position: relative;
   z-index: 1;
-}
-.bouton:hover::after {
-  opacity: 0.2;
-  box-shadow: 1px 4px 10px #3b3b3b;
-}
-.bouton::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0px;
-  bottom: 0;
-  left: 0;
-  background-color: white;
-  opacity: 0;
-  z-index: -1;
-  transition: opacity 250ms;
-  border-radius: 2rem;
-}
-
+  &:hover {
+    &::after {
+      opacity: 0.2;
+      box-shadow: 1px 4px 10px #3b3b3b;
+    }
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 250ms;
+    border-radius: 2rem;
+  }
+}*/
 /* section fonctionnement */
 .fonctionnement__titre {
   text-align: left;
@@ -271,11 +327,7 @@ a {
 .vignette-restaurants__details__favoris {
   position: relative;
   top: 10px;
-}
-.vignette-restaurants__details__favoris--actif {
-  position: relative;
-  top: 10px;
-  right: 28px;
+  right: 10px;
 }
 
 /* -------------------------------------------------------------------------------*/
@@ -283,6 +335,7 @@ a {
   font-size: 1.5rem;
   opacity: 1;
   z-index: 3;
+  position: relative;
 }
 .favoris:hover {
   animation: favoris 1s forwards;
@@ -291,6 +344,8 @@ a {
   animation: favoris-actif 1s ease-in-out forwards;
 }
 .favoris--actif {
+  position: absolute;
+  right: 0;
   background: -webkit-linear-gradient(#9356dc, #ff79da);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -301,35 +356,34 @@ a {
 }
 
 /* ----------------------------------------------------------------------*/
-/* footer */
-footer {
+/* footer ---------------------------------------------- mis dans ./utils/_footer.scss */
+/* footer {
   background-color: #353535;
   color: white;
   text-align: left;
   padding: 15px 20px 30px 20px;
-}
-footer h3 {
-  font-family: "Shrikhand", cursive;
-}
-footer ul {
-  list-style-type: none;
-  padding: 0;
-}
-footer ul div {
-  display: flex;
-  align-items: baseline;
-}
-footer ul div p {
-  margin: 0;
-}
-footer ul li {
-  margin: 5px 0 5px 0;
-}
-footer ul li i {
-  padding-right: 10px;
-  width: 15px;
-}
-
+  h3 {
+    font-family: "Shrikhand", cursive;
+  }
+  ul {
+    list-style-type: none;
+    padding: 0;
+    div {
+      display: flex;
+      align-items: baseline;
+      p {
+        margin: 0;
+      }
+    }
+    li {
+      margin: 5px 0 5px 0;
+      i {
+        padding-right: 10px;
+        width: 15px;
+      }
+    }
+  }
+} */
 /* --------------------------------- Page restaurants ----------------------------- */
 .restaurant {
   padding: 0 15px 0 15px;
