@@ -238,7 +238,6 @@ a {
 .restaurants__titre {
   text-align: left;
   margin: 20px 0px 0px 20px;
-  padding-top: 50px;
 }
 
 .vignette-restaurants {
@@ -270,32 +269,38 @@ a {
   margin: 10px 0 10px 0;
 }
 .vignette-restaurants__details__favoris {
-  font-size: 1.5rem;
-  margin: 10px 20px 0 0;
-  opacity: 1;
-  position: absolute;
-  right: 40px;
-  z-index: 3;
-}
-.vignette-restaurants__details__favoris:hover {
-  animation: favoris 1s forwards;
-}
-.vignette-restaurants__details__favoris:hover + .vignette-restaurants__details__favoris--actif {
-  animation: favoris-actif 1s ease-in-out forwards;
+  position: relative;
+  top: 10px;
 }
 .vignette-restaurants__details__favoris--actif {
+  position: relative;
+  top: 10px;
+  right: 28px;
+}
+
+/* -------------------------------------------------------------------------------*/
+.favoris {
+  font-size: 1.5rem;
+  opacity: 1;
+  z-index: 3;
+}
+.favoris:hover {
+  animation: favoris 1s forwards;
+}
+.favoris:hover + .favoris--actif {
+  animation: favoris-actif 1s ease-in-out forwards;
+}
+.favoris--actif {
   background: -webkit-linear-gradient(#9356dc, #ff79da);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  position: relative;
-  left: -40px;
-  top: 10px;
   font-size: 1.5rem;
   opacity: 0;
   z-index: 1;
   scale: 0.1;
 }
 
+/* ----------------------------------------------------------------------*/
 /* footer */
 footer {
   background-color: #353535;
@@ -346,9 +351,13 @@ footer ul li i {
   font-size: 0.9rem;
   font-weight: 400;
 }
-.restaurant__titre i {
-  font-size: 1.5rem;
-  padding-right: 20px;
+.restaurant__titre__favoris {
+  position: relative;
+  left: -25px;
+}
+.restaurant__titre__favoris--actif {
+  position: absolute;
+  right: 40px;
 }
 .restaurant__menu {
   text-align: start;
@@ -405,7 +414,7 @@ footer ul li i {
 .restaurant__menu__vignette__bouton {
   background-color: #99e2d0;
   width: 0;
-  transition: width 2s;
+  transition: width 0.5s;
   margin: -20px 0 -20px 0;
   border-radius: 0 1rem 1rem 0;
   display: flex;

@@ -263,7 +263,6 @@ a {
   &__titre {
     text-align: left;
     margin: 20px 0px 0px 20px;
-    padding-top: 50px;
   }
 }
 
@@ -294,37 +293,43 @@ a {
       }
     }
     &__favoris {
-      font-size: 1.5rem;
-      margin: 10px 20px 0 0;
-      opacity: 1;
-      position: absolute;
-      right: 40px;
-      z-index: 3;
-      &:hover {
-        animation: favoris 1s forwards;
-        & + .vignette-restaurants__details__favoris--actif {
-          animation: favoris-actif 1s ease-in-out forwards;
-        }
-      }
+      position: relative;
+
+      top: 10px;
 
       &--actif {
-        background: -webkit-linear-gradient(
-          $couleur-primaire,
-          $couleur-secondaire
-        );
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
         position: relative;
-        left: -40px;
         top: 10px;
-        font-size: 1.5rem;
-        opacity: 0;
-        z-index: 1;
-        scale: 0.1;
+        right: 28px;
       }
     }
   }
 }
+/* -------------------------------------------------------------------------------*/
+.favoris {
+  font-size: 1.5rem;
+
+  opacity: 1;
+  z-index: 3;
+  &:hover {
+    animation: favoris 1s forwards;
+    & + .favoris--actif {
+      animation: favoris-actif 1s ease-in-out forwards;
+    }
+  }
+
+  &--actif {
+    background: -webkit-linear-gradient($couleur-primaire, $couleur-secondaire);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.5rem;
+    opacity: 0;
+    z-index: 1;
+    scale: 0.1;
+  }
+}
+
+/* ----------------------------------------------------------------------*/
 
 /* footer */
 footer {
@@ -375,9 +380,13 @@ footer {
     font-family: "Shrikhand", cursive;
     font-size: 0.9rem;
     font-weight: 400;
-    i {
-      font-size: 1.5rem;
-      padding-right: 20px;
+    &__favoris {
+      position: relative;
+      left: -25px;
+      &--actif {
+        position: absolute;
+        right: 40px;
+      }
     }
   }
   &__menu {
@@ -439,7 +448,7 @@ footer {
       &__bouton {
         background-color: $couleur-tertiaire;
         width: 0;
-        transition: width 2s;
+        transition: width 0.5s;
         margin: -20px 0 -20px 0;
         border-radius: 0 1rem 1rem 0;
         display: flex;
