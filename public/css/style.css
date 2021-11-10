@@ -1,0 +1,546 @@
+/* ----------------------- IMPORTS ----------------------------------------- */
+.bouton {
+  background: linear-gradient(to top left, #9356dc, #ff79da);
+  color: white;
+  border-radius: 2rem;
+  border: none;
+  font-size: 1rem;
+  padding: 15px;
+  box-shadow: 1px 4px 10px #c5c5c5;
+  position: relative;
+  z-index: 1;
+}
+.bouton:hover::after {
+  opacity: 0.2;
+  box-shadow: 1px 4px 10px #3b3b3b;
+}
+.bouton::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0px;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 250ms;
+  border-radius: 2rem;
+}
+
+.header {
+  height: 60px;
+  box-shadow: 0px 3px 3px #c5c5c5;
+  margin-bottom: 3px;
+}
+.header__logo {
+  font-size: xx-large;
+  font-family: "Shrikhand", cursive;
+  margin-top: 0;
+  padding-top: 10px;
+}
+.header__retour {
+  position: absolute;
+  top: 1.5rem;
+  left: 2rem;
+}
+
+footer {
+  background-color: #353535;
+  color: white;
+  text-align: left;
+  padding: 15px 20px 30px 20px;
+}
+footer h3 {
+  font-family: "Shrikhand", cursive;
+}
+footer ul {
+  list-style-type: none;
+  padding: 0;
+}
+footer ul div {
+  display: flex;
+  align-items: baseline;
+}
+footer ul div p {
+  margin: 0;
+}
+footer ul li {
+  margin: 5px 0 5px 0;
+}
+footer ul li i {
+  padding-right: 10px;
+  width: 15px;
+}
+
+/* ------------------------------------------------------------------------- */
+/* keyframe */
+@keyframes anim-mots {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+    transform: rotate(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    transform: rotate(720deg);
+  }
+}
+@keyframes anim-boite {
+  100% {
+    opacity: 0;
+    transform: scale(0) rotate(720deg);
+  }
+}
+@keyframes favoris {
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes favoris-actif {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: scaleX(10) scaleY(10);
+  }
+}
+@keyframes anim-plats {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+/* fin keyframe */
+Body {
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+/* animation intro */
+/* voir pour extension !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+.boite-intro {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Shrikhand", cursive;
+  font-size: 4rem;
+  animation: anim-boite 1s 2.4s forwards;
+  background-color: white;
+  z-index: 5;
+  opacity: 1;
+}
+.boite-intro__mot1 {
+  opacity: 0;
+  color: #9356dc;
+  animation: anim-mots 0.8s;
+  animation-fill-mode: forwards;
+}
+.boite-intro__mot2 {
+  opacity: 0;
+  color: #ff79da;
+  animation: anim-mots 0.8s 0.8s ease-in-out;
+  animation-fill-mode: forwards;
+}
+.boite-intro__mot3 {
+  opacity: 0;
+  color: #99e2d0;
+  animation: anim-mots 0.8s 1.6s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+/* fin animation intro */
+/* header ---------------------------------------------- mis dans ./utils/_header.scss*/
+/* .header {
+  height: 60px;
+  box-shadow: 0px 3px 3px $box-shadow;
+  margin-bottom: 3px;
+  &__logo {
+    font-size: xx-large;
+    font-family: "Shrikhand", cursive;
+    margin-top: 0;
+    padding-top: 10px;
+  }
+  &__retour {
+    position: absolute;
+    top: 1.5rem;
+    left: 2rem;
+  }
+}
+*/
+/* section recherche restaurants */
+.recherche-restaurants {
+  background-color: #f6f6f6;
+}
+.recherche-restaurants__localisation {
+  height: 50px;
+  background-color: #eaeaea;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+.recherche-restaurants__localisation i {
+  margin-right: 15px;
+}
+.recherche-restaurants__explorer {
+  padding-bottom: 50px;
+}
+.recherche-restaurants__explorer p {
+  padding: 0px 15px 0px 15px;
+  margin-bottom: 30px;
+}
+.recherche-restaurants__titre {
+  padding-top: 40px;
+  margin: 0 20px 0 20px;
+}
+
+/* bouton ------------------------------------------mis dans ./components/_bouton.scss */
+/* .bouton {
+  background: $bouton-couleur;
+  color: white;
+  border-radius: 2rem;
+  border: none;
+  font-size: 1rem;
+  padding: 15px;
+  box-shadow: 1px 4px 10px $box-shadow;
+  position: relative;
+  z-index: 1;
+  &:hover {
+    &::after {
+      opacity: 0.2;
+      box-shadow: 1px 4px 10px #3b3b3b;
+    }
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 250ms;
+    border-radius: 2rem;
+  }
+}*/
+/* section fonctionnement */
+.fonctionnement__titre {
+  text-align: left;
+  margin: 40px 0px 0px 20px;
+}
+.fonctionnement__vignettes {
+  padding-bottom: 1px;
+}
+@media screen and (min-width: 1000px) {
+  .fonctionnement__vignettes {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+.vignette-fonctionnement {
+  display: flex;
+  align-items: center;
+  background-color: #f6f6f6;
+  margin: 30px 20px 30px 20px;
+  border-radius: 2rem;
+  box-shadow: 1px 4px 10px #c5c5c5;
+  justify-content: center;
+  position: relative;
+  flex: 1;
+}
+.vignette-fonctionnement p {
+  padding: 10px 0 10px 0;
+}
+.vignette-fonctionnement__chiffre {
+  display: flex;
+  background: #9356dc;
+  height: 25px;
+  width: 25px;
+  justify-content: center;
+  border-radius: 100px;
+  color: white;
+  font-size: 0.9rem;
+  align-items: center;
+  position: absolute;
+  left: -12px;
+}
+.vignette-fonctionnement i {
+  color: #7e7e7e;
+  font-size: 1.2rem;
+  position: absolute;
+  left: 15%;
+}
+@media screen and (min-width: 1000px) {
+  .vignette-fonctionnement i {
+    left: 10%;
+  }
+}
+
+/* section restaurants */
+.restaurants {
+  background-color: #f6f6f6;
+  padding: 20px;
+}
+.restaurants__titre {
+  text-align: left;
+  margin-top: 20px;
+}
+.restaurants__liens {
+  display: inline;
+}
+@media screen and (min-width: 600px) {
+  .restaurants__liens {
+    display: flex;
+  }
+  .restaurants__liens__1 {
+    margin-right: 10px;
+    flex: 1;
+  }
+  .restaurants__liens__2 {
+    margin-left: 10px;
+    flex: 1;
+  }
+}
+
+.vignette-restaurants {
+  background: white;
+  border-radius: 1.5rem;
+  margin: 20px 0 20px 0;
+  text-decoration: none;
+  height: 250px;
+}
+.vignette-restaurants__image {
+  object-fit: cover;
+  width: 100%;
+  border-radius: 1.5rem 1.5rem 0 0;
+  height: inherit;
+  height: 170px;
+}
+.vignette-restaurants__details {
+  display: flex;
+  justify-content: space-between;
+}
+.vignette-restaurants__details__description {
+  text-align: left;
+  margin: 0 20px 0 20px;
+}
+.vignette-restaurants__details__description h4 {
+  margin: 10px 0 10px 0;
+}
+.vignette-restaurants__details__description p {
+  margin: 10px 0 10px 0;
+}
+.vignette-restaurants__details__favoris {
+  position: relative;
+  top: 10px;
+  right: 10px;
+}
+
+/* -------------------------------------------------------------------------------*/
+.favoris {
+  font-size: 1.5rem;
+  opacity: 1;
+  z-index: 3;
+  position: relative;
+}
+.favoris:hover {
+  animation: favoris 1s forwards;
+}
+.favoris:hover + .favoris--actif {
+  animation: favoris-actif 1s ease-in-out forwards;
+}
+.favoris--actif {
+  position: absolute;
+  right: 0;
+  background: -webkit-linear-gradient(#9356dc, #ff79da);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.5rem;
+  opacity: 0;
+  z-index: 1;
+  scale: 0.1;
+}
+
+/* ----------------------------------------------------------------------*/
+/* footer ---------------------------------------------- mis dans ./utils/_footer.scss */
+/* footer {
+  background-color: #353535;
+  color: white;
+  text-align: left;
+  padding: 15px 20px 30px 20px;
+  h3 {
+    font-family: "Shrikhand", cursive;
+  }
+  ul {
+    list-style-type: none;
+    padding: 0;
+    div {
+      display: flex;
+      align-items: baseline;
+      p {
+        margin: 0;
+      }
+    }
+    li {
+      margin: 5px 0 5px 0;
+      i {
+        padding-right: 10px;
+        width: 15px;
+      }
+    }
+  }
+} */
+/* --------------------------------- Page restaurants ----------------------------- */
+.restaurant {
+  padding: 0 15px 0 15px;
+  background-color: #f6f6f6;
+  border-radius: 3rem 3rem 0 0;
+  position: relative;
+  margin-top: -50px;
+  padding-bottom: 60px;
+}
+.restaurant__photo {
+  width: 100%;
+  margin-top: -2px;
+  object-fit: cover;
+  max-height: 300px;
+}
+.restaurant__titre {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Shrikhand", cursive;
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+.restaurant__titre__favoris {
+  position: relative;
+  left: -25px;
+}
+.restaurant__titre__favoris--actif {
+  position: absolute;
+  right: 40px;
+}
+@media screen and (min-width: 1000px) {
+  .restaurant__menus {
+    display: flex;
+  }
+}
+.restaurant__menu {
+  text-align: start;
+  margin-bottom: 35px;
+}
+@media screen and (min-width: 1000px) {
+  .restaurant__menu {
+    flex: 1;
+  }
+}
+.restaurant__menu__titre {
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+@media screen and (min-width: 1000px) {
+  .restaurant__menu__milieu {
+    margin: 0 10px 0 10px;
+  }
+}
+.restaurant__menu__vignette {
+  display: flex;
+  background-color: white;
+  margin-bottom: 15px;
+  border-radius: 1rem;
+  box-shadow: 1px 4px 10px #c5c5c5;
+  overflow: hidden;
+  padding: 20px 0 20px 20px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  /* BOUTON VALIDATION ANIMATION ------------------------------------ */
+}
+.restaurant__menu__vignette:hover .restaurant__menu__vignette__bouton {
+  opacity: 1;
+  width: 90px;
+}
+.restaurant__menu__vignette:hover .restaurant__menu__vignette__bouton--anim {
+  transform: rotate(180deg);
+}
+.restaurant__menu__vignette:hover .restaurant__menu__vignette__plat {
+  width: 90px;
+}
+.restaurant__menu__vignette__plat {
+  flex: 1;
+}
+.restaurant__menu__vignette__plat__titre {
+  margin: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.restaurant__menu__vignette__plat__description {
+  margin: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.restaurant__menu__vignette__prix {
+  font-weight: bold;
+  padding: 0 20px 0 20px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.restaurant__menu__vignette__bouton {
+  background-color: #99e2d0;
+  width: 0;
+  transition: width 0.5s;
+  margin: -20px 0 -20px 0;
+  border-radius: 0 1rem 1rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+  opacity: 0.5;
+  transform-origin: right;
+}
+.restaurant__menu__vignette__bouton--anim {
+  rotate: 180deg;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* anim pour les plats */
+.e1 {
+  animation: anim-plats 0.5s ease-in-out both;
+}
+
+.e2 {
+  animation: anim-plats 0.5s 0.25s ease-in-out both;
+}
+
+.e3 {
+  animation: anim-plats 0.5s 0.5s ease-in-out both;
+}
+
+/*# sourceMappingURL=style.css.map */

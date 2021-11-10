@@ -1,0 +1,19 @@
+{
+  "name": "projet_3",
+  "version": "1.0.0",
+  "description": "Projet_3",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:public/css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ovslash/oliviervillaverde_3_06092021.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ovslash/oliviervillaverde_3_06092021/issues"
+  },
+  "homepage": "https://github.com/ovslash/oliviervillaverde_3_06092021#readme"
+}
