@@ -253,6 +253,12 @@ a {
 .fonctionnement__vignettes {
   padding-bottom: 1px;
 }
+@media screen and (min-width: 1000px) {
+  .fonctionnement__vignettes {
+    display: flex;
+    justify-content: space-around;
+  }
+}
 
 .vignette-fonctionnement {
   display: flex;
@@ -262,6 +268,8 @@ a {
   border-radius: 2rem;
   box-shadow: 1px 4px 10px #c5c5c5;
   justify-content: center;
+  position: relative;
+  flex: 1;
 }
 .vignette-fonctionnement p {
   padding: 10px 0 10px 0;
@@ -277,13 +285,18 @@ a {
   font-size: 0.9rem;
   align-items: center;
   position: absolute;
-  left: 8px;
+  left: -12px;
 }
 .vignette-fonctionnement i {
   color: #7e7e7e;
   font-size: 1.2rem;
   position: absolute;
   left: 15%;
+}
+@media screen and (min-width: 1000px) {
+  .vignette-fonctionnement i {
+    left: 10%;
+  }
 }
 
 /* section restaurants */
@@ -293,7 +306,23 @@ a {
 }
 .restaurants__titre {
   text-align: left;
-  margin: 20px 0px 0px 20px;
+  margin-top: 20px;
+}
+.restaurants__liens {
+  display: inline;
+}
+@media screen and (min-width: 600px) {
+  .restaurants__liens {
+    display: flex;
+  }
+  .restaurants__liens__1 {
+    margin-right: 10px;
+    flex: 1;
+  }
+  .restaurants__liens__2 {
+    margin-left: 10px;
+    flex: 1;
+  }
 }
 
 .vignette-restaurants {
@@ -396,6 +425,8 @@ a {
 .restaurant__photo {
   width: 100%;
   margin-top: -2px;
+  object-fit: cover;
+  max-height: 300px;
 }
 .restaurant__titre {
   display: flex;
@@ -413,13 +444,28 @@ a {
   position: absolute;
   right: 40px;
 }
+@media screen and (min-width: 1000px) {
+  .restaurant__menus {
+    display: flex;
+  }
+}
 .restaurant__menu {
   text-align: start;
   margin-bottom: 35px;
 }
+@media screen and (min-width: 1000px) {
+  .restaurant__menu {
+    flex: 1;
+  }
+}
 .restaurant__menu__titre {
   font-size: 1.1rem;
   font-weight: 400;
+}
+@media screen and (min-width: 1000px) {
+  .restaurant__menu__milieu {
+    margin: 0 10px 0 10px;
+  }
 }
 .restaurant__menu__vignette {
   display: flex;
