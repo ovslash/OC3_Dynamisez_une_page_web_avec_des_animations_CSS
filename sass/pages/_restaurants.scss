@@ -82,12 +82,14 @@
           white-space: nowrap;
           text-overflow: ellipsis;
           overflow: hidden;
+          font-size: 1.1rem;
         }
         &__description {
           margin: 0;
           white-space: nowrap;
           text-overflow: ellipsis;
           overflow: hidden;
+          font-size: 0.9rem;
         }
       }
       &__prix {

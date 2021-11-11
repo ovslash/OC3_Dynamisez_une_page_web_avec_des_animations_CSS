@@ -415,12 +415,14 @@ footer ul li i {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
+  font-size: 1.1rem;
 }
 .restaurant__menu__vignette__plat__description {
   margin: 0;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
+  font-size: 0.9rem;
 }
 .restaurant__menu__vignette__prix {
   font-weight: bold;
