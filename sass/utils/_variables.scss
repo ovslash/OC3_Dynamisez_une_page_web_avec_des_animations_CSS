@@ -10,3 +10,7 @@ $bouton-couleur: linear-gradient(
   $couleur-primaire,
   $couleur-secondaire
 );
+$breakpoints: (
+  tablette: 600px,
+  desk: 1000px,
+);

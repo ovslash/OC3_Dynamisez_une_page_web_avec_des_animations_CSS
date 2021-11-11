@@ -1,4 +1,61 @@
+@charset "UTF-8";
 /* ----------------------- IMPORTS ----------------------------------------- */
+Body {
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+@keyframes anim-mots {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+    transform: rotate(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    transform: rotate(720deg);
+  }
+}
+@keyframes anim-boite {
+  100% {
+    opacity: 0;
+    transform: scale(0) rotate(720deg);
+  }
+}
+@keyframes favoris {
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes favoris-actif {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    /* transform: scaleX(1) scaleY(1); */
+  }
+}
+@keyframes anim-plats {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 .bouton {
   background: linear-gradient(to top left, #9356dc, #ff79da);
   color: white;
@@ -24,6 +81,30 @@
   opacity: 0;
   transition: opacity 250ms;
   border-radius: 2rem;
+}
+
+.favoris {
+  font-size: 1.5rem;
+  opacity: 1;
+  z-index: 3;
+  position: relative;
+}
+.favoris:hover {
+  animation: favoris 1s forwards;
+}
+.favoris:hover + .favoris--actif {
+  animation: favoris-actif 1s ease-in-out forwards;
+}
+.favoris--actif {
+  position: absolute;
+  right: 0;
+  background: -webkit-linear-gradient(#9356dc, #ff79da);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.5rem;
+  opacity: 0;
+  z-index: 1;
+  /* scale: 0.1;*/
 }
 
 .header {
@@ -71,67 +152,6 @@ footer ul li i {
   width: 15px;
 }
 
-/* ------------------------------------------------------------------------- */
-/* keyframe */
-@keyframes anim-mots {
-  0% {
-    opacity: 0;
-    transform: scale(0);
-    transform: rotate(0);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-    transform: rotate(720deg);
-  }
-}
-@keyframes anim-boite {
-  100% {
-    opacity: 0;
-    transform: scale(0) rotate(720deg);
-  }
-}
-@keyframes favoris {
-  70% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-@keyframes favoris-actif {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-    /* transform: scaleX(1) scaleY(1); */
-  }
-}
-@keyframes anim-plats {
-  0% {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-/* fin keyframe */
-Body {
-  text-align: center;
-  font-family: "Roboto", sans-serif;
-  margin: 0;
-}
-
-a {
-  color: black;
-  text-decoration: none;
-}
-
-/* animation intro */
-/* voir pour extension !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
 .boite-intro {
   position: fixed;
   height: 100%;
@@ -167,25 +187,6 @@ a {
   animation-fill-mode: forwards;
 }
 
-/* fin animation intro */
-/* header ---------------------------------------------- mis dans ./utils/_header.scss*/
-/* .header {
-  height: 60px;
-  box-shadow: 0px 3px 3px $box-shadow;
-  margin-bottom: 3px;
-  &__logo {
-    font-size: xx-large;
-    font-family: "Shrikhand", cursive;
-    margin-top: 0;
-    padding-top: 10px;
-  }
-  &__retour {
-    position: absolute;
-    top: 1.5rem;
-    left: 2rem;
-  }
-}
-*/
 /* section recherche restaurants */
 .recherche-restaurants {
   background-color: #f6f6f6;
@@ -212,37 +213,31 @@ a {
   margin: 0 20px 0 20px;
 }
 
-/* bouton ------------------------------------------mis dans ./components/_bouton.scss */
-/* .bouton {
-  background: $bouton-couleur;
-  color: white;
-  border-radius: 2rem;
-  border: none;
-  font-size: 1rem;
-  padding: 15px;
-  box-shadow: 1px 4px 10px $box-shadow;
-  position: relative;
-  z-index: 1;
-  &:hover {
-    &::after {
-      opacity: 0.2;
-      box-shadow: 1px 4px 10px #3b3b3b;
-    }
+.restaurants {
+  background-color: #f6f6f6;
+  padding: 20px;
+}
+.restaurants__titre {
+  text-align: left;
+  margin-top: 20px;
+}
+.restaurants__liens {
+  display: inline;
+}
+@media screen and (min-width: 600px) {
+  .restaurants__liens {
+    display: flex;
   }
-  &::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0px;
-    bottom: 0;
-    left: 0;
-    background-color: white;
-    opacity: 0;
-    z-index: -1;
-    transition: opacity 250ms;
-    border-radius: 2rem;
+  .restaurants__liens__1 {
+    margin-right: 10px;
+    flex: 1;
   }
-}*/
+  .restaurants__liens__2 {
+    margin-left: 10px;
+    flex: 1;
+  }
+}
+
 /* section fonctionnement */
 .fonctionnement__titre {
   text-align: left;
@@ -297,32 +292,6 @@ a {
   }
 }
 
-/* section restaurants */
-.restaurants {
-  background-color: #f6f6f6;
-  padding: 20px;
-}
-.restaurants__titre {
-  text-align: left;
-  margin-top: 20px;
-}
-.restaurants__liens {
-  display: inline;
-}
-@media screen and (min-width: 600px) {
-  .restaurants__liens {
-    display: flex;
-  }
-  .restaurants__liens__1 {
-    margin-right: 10px;
-    flex: 1;
-  }
-  .restaurants__liens__2 {
-    margin-left: 10px;
-    flex: 1;
-  }
-}
-
 .vignette-restaurants {
   background: white;
   border-radius: 1.5rem;
@@ -357,61 +326,6 @@ a {
   right: 10px;
 }
 
-/* -------------------------------------------------------------------------------*/
-.favoris {
-  font-size: 1.5rem;
-  opacity: 1;
-  z-index: 3;
-  position: relative;
-}
-.favoris:hover {
-  animation: favoris 1s forwards;
-}
-.favoris:hover + .favoris--actif {
-  animation: favoris-actif 1s ease-in-out forwards;
-}
-.favoris--actif {
-  position: absolute;
-  right: 0;
-  background: -webkit-linear-gradient(#9356dc, #ff79da);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-size: 1.5rem;
-  opacity: 0;
-  z-index: 1;
-  /* scale: 0.1;*/
-}
-
-/* ----------------------------------------------------------------------*/
-/* footer ---------------------------------------------- mis dans ./utils/_footer.scss */
-/* footer {
-  background-color: #353535;
-  color: white;
-  text-align: left;
-  padding: 15px 20px 30px 20px;
-  h3 {
-    font-family: "Shrikhand", cursive;
-  }
-  ul {
-    list-style-type: none;
-    padding: 0;
-    div {
-      display: flex;
-      align-items: baseline;
-      p {
-        margin: 0;
-      }
-    }
-    li {
-      margin: 5px 0 5px 0;
-      i {
-        padding-right: 10px;
-        width: 15px;
-      }
-    }
-  }
-} */
-/* --------------------------------- Page restaurants ----------------------------- */
 .restaurant {
   padding: 0 15px 0 15px;
   background-color: #f6f6f6;
@@ -534,7 +448,7 @@ a {
   transition: transform 0.5s ease-in-out;
 }
 
-/* anim pour les plats */
+/* animation pour l'arrivée des plats */
 .e1 {
   animation: anim-plats 0.5s ease-in-out both;
 }
@@ -546,5 +460,7 @@ a {
 .e3 {
   animation: anim-plats 0.5s 0.5s ease-in-out both;
 }
+
+/* ------------------------------------------------------------------------- */
 
 /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,172 @@
+.boite-intro {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Shrikhand", cursive;
+  font-size: 4rem;
+  animation: anim-boite 1s $temps-mot * 3 forwards;
+  background-color: white;
+  z-index: 5;
+  opacity: 1;
+  &__mot1 {
+    opacity: 0;
+    color: $couleur-primaire;
+    animation: anim-mots $temps-mot;
+    animation-fill-mode: forwards;
+  }
+  &__mot2 {
+    opacity: 0;
+    color: $couleur-secondaire;
+    animation: anim-mots $temps-mot $temps-mot ease-in-out;
+    animation-fill-mode: forwards;
+  }
+  &__mot3 {
+    opacity: 0;
+    color: $couleur-tertiaire;
+    animation: anim-mots $temps-mot $temps-mot * 2 ease-in-out;
+    animation-fill-mode: forwards;
+  }
+}
+
+/* section recherche restaurants */
+.recherche-restaurants {
+  background-color: $fond;
+
+  &__localisation {
+    height: 50px;
+    background-color: #eaeaea;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+
+    i {
+      margin-right: 15px;
+    }
+  }
+  &__explorer {
+    padding-bottom: 50px;
+    p {
+      padding: 0px 15px 0px 15px;
+      margin-bottom: 30px;
+    }
+  }
+  &__titre {
+    padding-top: 40px;
+    margin: 0 20px 0 20px;
+  }
+}
+
+.restaurants {
+  background-color: $fond;
+  padding: 20px;
+  &__titre {
+    text-align: left;
+    margin-top: 20px;
+  }
+  &__liens {
+    display: inline;
+    @include tablette() {
+      display: flex;
+      &__1 {
+        margin-right: 10px;
+        flex: 1;
+      }
+      &__2 {
+        margin-left: 10px;
+        flex: 1;
+      }
+    }
+  }
+}
+
+/* section fonctionnement */
+
+.fonctionnement {
+  &__titre {
+    text-align: left;
+    margin: 40px 0px 0px 20px;
+  }
+  &__vignettes {
+    padding-bottom: 1px;
+    @include desk() {
+      display: flex;
+      justify-content: space-around;
+    }
+  }
+}
+
+.vignette-fonctionnement {
+  display: flex;
+  align-items: center;
+  background-color: $fond;
+  margin: 30px 20px 30px 20px;
+  border-radius: 2rem;
+  box-shadow: 1px 4px 10px $box-shadow;
+  justify-content: center;
+  position: relative;
+  flex: 1;
+  p {
+    padding: 10px 0 10px 0;
+  }
+  &__chiffre {
+    display: flex;
+    background: $couleur-primaire;
+    height: 25px;
+    width: 25px;
+    justify-content: center;
+    border-radius: 100px;
+    color: white;
+    font-size: 0.9rem;
+    align-items: center;
+    position: absolute;
+    left: -12px;
+  }
+  i {
+    color: #7e7e7e;
+    font-size: 1.2rem;
+    position: absolute;
+    left: 15%;
+    @include desk() {
+      left: 10%;
+    }
+  }
+}
+
+.vignette-restaurants {
+  background: white;
+  border-radius: 1.5rem;
+  margin: 20px 0 20px 0;
+  text-decoration: none;
+  height: 250px;
+  &__image {
+    object-fit: cover;
+    width: 100%;
+    border-radius: 1.5rem 1.5rem 0 0;
+    height: inherit;
+    height: 170px;
+  }
+  &__details {
+    display: flex;
+    justify-content: space-between;
+    &__description {
+      text-align: left;
+      margin: 0 20px 0 20px;
+      h4 {
+        margin: 10px 0 10px 0;
+      }
+      p {
+        margin: 10px 0 10px 0;
+      }
+    }
+    &__favoris {
+      position: relative;
+      top: 10px;
+      right: 10px;
+    }
+  }
+}

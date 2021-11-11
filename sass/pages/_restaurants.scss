@@ -1,0 +1,131 @@
+.restaurant {
+  padding: 0 15px 0 15px;
+  background-color: $fond;
+  border-radius: 3rem 3rem 0 0;
+  position: relative;
+  margin-top: -50px;
+  padding-bottom: 60px;
+  @include desk() {
+    margin-top: -2px;
+    border-radius: 0;
+  }
+  &__photo {
+    width: 100%;
+    margin-top: -2px;
+    object-fit: cover;
+    max-height: 300px;
+  }
+  &__titre {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Shrikhand", cursive;
+    font-size: 0.9rem;
+    font-weight: 400;
+    &__favoris {
+      position: relative;
+      left: -25px;
+      &--actif {
+        position: absolute;
+        right: 40px;
+      }
+    }
+  }
+  &__menus {
+    @include desk() {
+      display: flex;
+    }
+  }
+
+  &__menu {
+    text-align: start;
+    margin-bottom: 35px;
+    @include desk() {
+      flex: 1;
+    }
+    &__titre {
+      font-size: 1.1rem;
+      font-weight: 400;
+    }
+    &__milieu {
+      @include desk() {
+        margin: 0 10px 0 10px;
+      }
+    }
+    &__vignette {
+      display: flex;
+      background-color: white;
+      margin-bottom: 15px;
+      border-radius: 1rem;
+      box-shadow: 1px 4px 10px $box-shadow;
+      overflow: hidden;
+      padding: 20px 0 20px 20px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      /* BOUTON VALIDATION ANIMATION ------------------------------------ */
+      &:hover &__bouton {
+        opacity: 1;
+        width: 90px;
+        &--anim {
+          transform: rotate(360deg);
+        }
+      }
+      &:hover &__plat {
+        width: 90px;
+      }
+
+      &__plat {
+        flex: 1;
+
+        &__titre {
+          margin: 0;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden;
+        }
+        &__description {
+          margin: 0;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden;
+        }
+      }
+      &__prix {
+        font-weight: bold;
+        padding: 0 20px 0 20px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+      }
+      &__bouton {
+        background-color: $couleur-tertiaire;
+        width: 0;
+        transition: width 0.5s;
+        margin: -20px 0 -20px 0;
+        border-radius: 0 1rem 1rem 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1.5rem;
+        opacity: 0.5;
+        transform-origin: right;
+        &--anim {
+          /*rotate: 180deg;*/
+          transition: transform 0.5s ease-in-out;
+        }
+      }
+    }
+  }
+}
+
+/* animation pour l'arrivée des plats */
+.e1 {
+  animation: anim-plats $temps-plats ease-in-out both;
+}
+.e2 {
+  animation: anim-plats $temps-plats $temps-plats * 0.5 ease-in-out both;
+}
+.e3 {
+  animation: anim-plats $temps-plats $temps-plats * 1 ease-in-out both;
+}
