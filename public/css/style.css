@@ -8,7 +8,6 @@
   padding: 15px;
   box-shadow: 1px 4px 10px #c5c5c5;
   position: relative;
-  z-index: 1;
 }
 .bouton:hover::after {
   opacity: 0.2;
@@ -23,7 +22,6 @@
   left: 0;
   background-color: white;
   opacity: 0;
-  z-index: -1;
   transition: opacity 250ms;
   border-radius: 2rem;
 }
@@ -107,7 +105,7 @@ footer ul li i {
   }
   100% {
     opacity: 1;
-    transform: scaleX(10) scaleY(10);
+    /* transform: scaleX(1) scaleY(1); */
   }
 }
 @keyframes anim-plats {
@@ -381,7 +379,7 @@ a {
   font-size: 1.5rem;
   opacity: 0;
   z-index: 1;
-  scale: 0.1;
+  /* scale: 0.1;*/
 }
 
 /* ----------------------------------------------------------------------*/
@@ -490,7 +488,7 @@ a {
   width: 90px;
 }
 .restaurant__menu__vignette:hover .restaurant__menu__vignette__bouton--anim {
-  transform: rotate(180deg);
+  transform: rotate(360deg);
 }
 .restaurant__menu__vignette:hover .restaurant__menu__vignette__plat {
   width: 90px;
@@ -532,7 +530,7 @@ a {
   transform-origin: right;
 }
 .restaurant__menu__vignette__bouton--anim {
-  rotate: 180deg;
+  /*rotate: 180deg;*/
   transition: transform 0.5s ease-in-out;
 }
 
