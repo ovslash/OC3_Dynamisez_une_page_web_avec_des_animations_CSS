@@ -4,7 +4,8 @@
   "description": "Projet_3",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --watch ./sass/main.scss:public/css/style.css"
+    "sass": "sass --watch ./sass/main.scss:public/css/style.css",
+    "prefix": "postcss ./public/css/style.css --use autoprefixer -d ./public/css/prefixed/"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,6 @@
   "bugs": {
     "url": "https://github.com/ovslash/oliviervillaverde_3_06092021/issues"
   },
-  "homepage": "https://github.com/ovslash/oliviervillaverde_3_06092021#readme"
+  "homepage": "https://github.com/ovslash/oliviervillaverde_3_06092021#readme",
+  "browserslist": "last 4 versions"
 }
