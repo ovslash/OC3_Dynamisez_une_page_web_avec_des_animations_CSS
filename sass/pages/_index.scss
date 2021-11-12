@@ -135,6 +135,12 @@
       left: 10%;
     }
   }
+  &__alternatif {
+    background-color: lighten($couleur-primaire, 35%);
+    i {
+      color: $couleur-primaire;
+    }
+  }
 }
 
 .vignette-restaurants {
@@ -143,6 +149,7 @@
   margin: 20px 0 20px 0;
   text-decoration: none;
   height: 250px;
+  position: relative;
   &__image {
     object-fit: cover;
     width: 100%;
@@ -168,5 +175,13 @@
       top: 10px;
       right: 10px;
     }
+  }
+  &__nouveau {
+    background-color: $couleur-tertiaire;
+    color: darken($couleur-tertiaire, 30%);
+    width: 80px;
+    position: absolute;
+    right: 13px;
+    top: 13px;
   }
 }

@@ -291,6 +291,12 @@ footer ul li i {
     left: 10%;
   }
 }
+.vignette-fonctionnement__alternatif {
+  background-color: #f2eafb;
+}
+.vignette-fonctionnement__alternatif i {
+  color: #9356dc;
+}
 
 .vignette-restaurants {
   background: white;
@@ -298,6 +304,7 @@ footer ul li i {
   margin: 20px 0 20px 0;
   text-decoration: none;
   height: 250px;
+  position: relative;
 }
 .vignette-restaurants__image {
   object-fit: cover;
@@ -324,6 +331,14 @@ footer ul li i {
   position: relative;
   top: 10px;
   right: 10px;
+}
+.vignette-restaurants__nouveau {
+  background-color: #99e2d0;
+  color: #32b091;
+  width: 80px;
+  position: absolute;
+  right: 13px;
+  top: 13px;
 }
 
 .restaurant {
