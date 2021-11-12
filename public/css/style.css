@@ -1,5 +1,6 @@
 @charset "UTF-8";
 /* ----------------------- IMPORTS ----------------------------------------- */
+/* pour l'arrivée des plats */
 Body {
   text-align: center;
   font-family: "Roboto", sans-serif;
@@ -486,7 +487,7 @@ footer ul li a {
 
 /* animation pour l'arrivée des plats */
 .e1 {
-  animation: anim-plats 0.5s ease-in-out both;
+  animation: anim-plats 0.5s 0s ease-in-out both;
 }
 
 .e2 {

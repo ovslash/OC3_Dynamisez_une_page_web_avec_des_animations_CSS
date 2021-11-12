@@ -132,12 +132,17 @@
 }
 
 /* animation pour l'arrivée des plats */
+
+@mixin arrivee_plats($ordre) {
+  animation: anim-plats $temps-plats $temps-plats * $ordre ease-in-out both;
+}
+
 .e1 {
-  animation: anim-plats $temps-plats ease-in-out both;
+  @include arrivee_plats(0);
 }
 .e2 {
-  animation: anim-plats $temps-plats $temps-plats * 0.5 ease-in-out both;
+  @include arrivee_plats(0.5);
 }
 .e3 {
-  animation: anim-plats $temps-plats $temps-plats * 1 ease-in-out both;
+  @include arrivee_plats(1);
 }

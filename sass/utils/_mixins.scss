@@ -9,3 +9,8 @@
     @content;
   }
 }
+
+/* pour l'arrivée des plats */
+@mixin arrivee_plats($ordre) {
+  animation: anim-plats $temps-plats $temps-plats * $ordre ease-in-out both;
+}
