@@ -137,6 +137,12 @@ footer ul {
   list-style-type: none;
   padding: 0;
 }
+@media screen and (min-width: 1000px) {
+  footer ul {
+    display: flex;
+    justify-content: space-around;
+  }
+}
 footer ul div {
   display: flex;
   align-items: baseline;
@@ -150,6 +156,9 @@ footer ul li {
 footer ul li i {
   padding-right: 10px;
   width: 15px;
+}
+footer ul li a {
+  color: white;
 }
 
 .boite-intro {
