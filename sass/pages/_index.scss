@@ -135,7 +135,7 @@
       left: 10%;
     }
   }
-  &__alternatif {
+  &:hover {
     background-color: lighten($couleur-primaire, 35%);
     i {
       color: $couleur-primaire;
