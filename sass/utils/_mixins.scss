@@ -1,3 +1,5 @@
+/* responsive */
+
 @mixin tablette {
   @media screen and (min-width: map-get($breakpoints, tablette)) {
     @content;
@@ -13,4 +15,18 @@
 /* pour l'arrivée des plats */
 @mixin arrivee_plats($ordre) {
   animation: anim-plats $temps-plats $temps-plats * $ordre ease-in-out both;
+}
+
+/* pour centrer contenu */
+@mixin centrer-contenu {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px;
+}
+
+@mixin centrer-contenu-bloc {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px;
 }

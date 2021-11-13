@@ -1,6 +1,8 @@
 @charset "UTF-8";
 /* ----------------------- IMPORTS ----------------------------------------- */
+/* responsive */
 /* pour l'arrivée des plats */
+/* pour centrer contenu */
 Body {
   text-align: center;
   font-family: "Roboto", sans-serif;
@@ -110,8 +112,9 @@ a {
 
 .header {
   height: 60px;
-  box-shadow: 0px 3px 3px #c5c5c5;
+  box-shadow: 0px 3px 3px 0px #c5c5c5;
   margin-bottom: 3px;
+  position: relative;
 }
 .header__logo {
   font-size: xx-large;
@@ -124,6 +127,12 @@ a {
   top: 1.5rem;
   left: 2rem;
 }
+.header-restaurants {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px;
+  box-shadow: none;
+}
 
 footer {
   background-color: #353535;
@@ -133,10 +142,17 @@ footer {
 }
 footer h3 {
   font-family: "Shrikhand", cursive;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px;
 }
 footer ul {
   list-style-type: none;
   padding: 0;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px;
 }
 @media screen and (min-width: 1000px) {
   footer ul {
@@ -230,9 +246,15 @@ footer ul li a {
 .restaurants__titre {
   text-align: left;
   margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px;
 }
 .restaurants__liens {
   display: inline;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px;
 }
 @media screen and (min-width: 600px) {
   .restaurants__liens {
@@ -252,9 +274,16 @@ footer ul li a {
 .fonctionnement__titre {
   text-align: left;
   margin: 40px 0px 0px 20px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px;
 }
 .fonctionnement__vignettes {
   padding-bottom: 1px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px;
 }
 @media screen and (min-width: 1000px) {
   .fonctionnement__vignettes {
@@ -378,6 +407,9 @@ footer ul li a {
   font-family: "Shrikhand", cursive;
   font-size: 0.9rem;
   font-weight: 400;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px;
 }
 .restaurant__titre__favoris {
   position: relative;
@@ -390,6 +422,10 @@ footer ul li a {
 @media screen and (min-width: 1000px) {
   .restaurant__menus {
     display: flex;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
   }
 }
 .restaurant__menu {

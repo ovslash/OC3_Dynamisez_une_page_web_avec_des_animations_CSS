@@ -22,6 +22,7 @@
     font-family: "Shrikhand", cursive;
     font-size: 0.9rem;
     font-weight: 400;
+    @include centrer-contenu;
     &__favoris {
       position: relative;
       left: -25px;
@@ -34,6 +35,7 @@
   &__menus {
     @include desk() {
       display: flex;
+      @include centrer-contenu-bloc;
     }
   }
 

@@ -1,7 +1,10 @@
 .header {
   height: 60px;
-  box-shadow: 0px 3px 3px $box-shadow;
+  box-shadow: 0px 3px 3px 0px $box-shadow;
+
   margin-bottom: 3px;
+
+  position: relative;
   &__logo {
     font-size: xx-large;
     font-family: "Shrikhand", cursive;
@@ -12,5 +15,9 @@
     position: absolute;
     top: 1.5rem;
     left: 2rem;
+  }
+  &-restaurants {
+    @include centrer-contenu;
+    box-shadow: none;
   }
 }

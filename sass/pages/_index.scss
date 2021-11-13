@@ -67,9 +67,11 @@
   &__titre {
     text-align: left;
     margin-top: 20px;
+    @include centrer-contenu;
   }
   &__liens {
     display: inline;
+    @include centrer-contenu;
     @include tablette() {
       display: flex;
       &__1 {
@@ -90,9 +92,11 @@
   &__titre {
     text-align: left;
     margin: 40px 0px 0px 20px;
+    @include centrer-contenu;
   }
   &__vignettes {
     padding-bottom: 1px;
+    @include centrer-contenu-bloc;
     @include desk() {
       display: flex;
       justify-content: space-around;
