@@ -130,7 +130,7 @@ a {
 .header-restaurants {
   margin-left: auto;
   margin-right: auto;
-  max-width: 1200px;
+  max-width: 1400px;
   box-shadow: none;
 }
 
@@ -144,7 +144,7 @@ footer h3 {
   font-family: "Shrikhand", cursive;
   margin-left: auto;
   margin-right: auto;
-  max-width: 1200px;
+  max-width: 1400px;
 }
 footer ul {
   list-style-type: none;
@@ -152,7 +152,7 @@ footer ul {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
-  max-width: 1200px;
+  max-width: 1400px;
 }
 @media screen and (min-width: 1000px) {
   footer ul {
@@ -248,13 +248,13 @@ footer ul li a {
   margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
-  max-width: 1200px;
+  max-width: 1400px;
 }
 .restaurants__liens {
   display: inline;
   margin-left: auto;
   margin-right: auto;
-  max-width: 1200px;
+  max-width: 1400px;
 }
 @media screen and (min-width: 600px) {
   .restaurants__liens {
@@ -276,14 +276,14 @@ footer ul li a {
   margin: 40px 0px 0px 20px;
   margin-left: auto;
   margin-right: auto;
-  max-width: 1200px;
+  max-width: 1400px;
 }
 .fonctionnement__vignettes {
   padding-bottom: 1px;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
-  max-width: 1200px;
+  max-width: 1400px;
 }
 @media screen and (min-width: 1000px) {
   .fonctionnement__vignettes {
@@ -323,11 +323,16 @@ footer ul li a {
   color: #7e7e7e;
   font-size: 1.2rem;
   position: absolute;
-  left: 15%;
+  left: 12%;
+}
+@media screen and (min-width: 600px) {
+  .vignette-fonctionnement i {
+    left: 20%;
+  }
 }
 @media screen and (min-width: 1000px) {
   .vignette-fonctionnement i {
-    left: 10%;
+    left: 12%;
   }
 }
 .vignette-fonctionnement:hover {
@@ -409,7 +414,7 @@ footer ul li a {
   font-weight: 400;
   margin-left: auto;
   margin-right: auto;
-  max-width: 1200px;
+  max-width: 1400px;
 }
 .restaurant__titre__favoris {
   position: relative;
@@ -425,7 +430,7 @@ footer ul li a {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
-    max-width: 1200px;
+    max-width: 1400px;
   }
 }
 .restaurant__menu {

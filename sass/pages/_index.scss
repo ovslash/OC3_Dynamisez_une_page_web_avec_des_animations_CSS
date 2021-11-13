@@ -134,9 +134,12 @@
     color: #7e7e7e;
     font-size: 1.2rem;
     position: absolute;
-    left: 15%;
+    left: 12%;
+    @include tablette() {
+      left: 20%;
+    }
     @include desk() {
-      left: 10%;
+      left: 12%;
     }
   }
   &:hover {
