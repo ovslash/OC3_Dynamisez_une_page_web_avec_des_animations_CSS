@@ -149,15 +149,15 @@ footer h3 {
 footer ul {
   list-style-type: none;
   padding: 0;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 1400px;
 }
 @media screen and (min-width: 1000px) {
   footer ul {
     display: flex;
     justify-content: space-around;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1400px;
   }
 }
 footer ul div {
@@ -274,21 +274,25 @@ footer ul li a {
 .fonctionnement__titre {
   text-align: left;
   margin: 40px 0px 0px 20px;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 1400px;
+}
+@media screen and (min-width: 1000px) {
+  .fonctionnement__titre {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1400px;
+  }
 }
 .fonctionnement__vignettes {
-  padding-bottom: 1px;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 1400px;
+  padding-left: 5px;
 }
 @media screen and (min-width: 1000px) {
   .fonctionnement__vignettes {
     display: flex;
     justify-content: space-around;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1400px;
   }
 }
 

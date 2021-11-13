@@ -92,14 +92,17 @@
   &__titre {
     text-align: left;
     margin: 40px 0px 0px 20px;
-    @include centrer-contenu;
+    @include desk {
+      @include centrer-contenu;
+    }
   }
   &__vignettes {
-    padding-bottom: 1px;
-    @include centrer-contenu-bloc;
+    padding-left: 5px;
+
     @include desk() {
       display: flex;
       justify-content: space-around;
+      @include centrer-contenu-bloc;
     }
   }
 }

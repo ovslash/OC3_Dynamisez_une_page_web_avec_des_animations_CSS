@@ -10,10 +10,11 @@ footer {
   ul {
     list-style-type: none;
     padding: 0;
-    @include centrer-contenu-bloc;
+
     @include desk {
       display: flex;
       justify-content: space-around;
+      @include centrer-contenu-bloc;
     }
     div {
       display: flex;
