@@ -189,27 +189,27 @@ footer ul li a {
   align-items: center;
   font-family: "Shrikhand", cursive;
   font-size: 4rem;
-  animation: anim-boite 1s 2.4s forwards;
+  animation: anim-boite 1s 2.1s forwards;
   background-color: white;
   z-index: 5;
   opacity: 1;
 }
-.boite-intro__mot1 {
+.boite-intro__mot0 {
   opacity: 0;
   color: #9356dc;
-  animation: anim-mots 0.8s;
+  animation: anim-mots 0.7s 0s;
+  animation-fill-mode: forwards;
+}
+.boite-intro__mot1 {
+  opacity: 0;
+  color: #ff79da;
+  animation: anim-mots 0.7s 0.7s;
   animation-fill-mode: forwards;
 }
 .boite-intro__mot2 {
   opacity: 0;
-  color: #ff79da;
-  animation: anim-mots 0.8s 0.8s ease-in-out;
-  animation-fill-mode: forwards;
-}
-.boite-intro__mot3 {
-  opacity: 0;
   color: #99e2d0;
-  animation: anim-mots 0.8s 1.6s ease-in-out;
+  animation: anim-mots 0.7s 1.4s;
   animation-fill-mode: forwards;
 }
 

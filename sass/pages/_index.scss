@@ -13,23 +13,16 @@
   background-color: white;
   z-index: 5;
   opacity: 1;
-  &__mot1 {
-    opacity: 0;
-    color: $couleur-primaire;
-    animation: anim-mots $temps-mot;
-    animation-fill-mode: forwards;
-  }
-  &__mot2 {
-    opacity: 0;
-    color: $couleur-secondaire;
-    animation: anim-mots $temps-mot $temps-mot ease-in-out;
-    animation-fill-mode: forwards;
-  }
-  &__mot3 {
-    opacity: 0;
-    color: $couleur-tertiaire;
-    animation: anim-mots $temps-mot $temps-mot * 2 ease-in-out;
-    animation-fill-mode: forwards;
+
+  @each $i, $couleur in (0, $couleur-primaire), (1, $couleur-secondaire),
+    (2, $couleur-tertiaire)
+  {
+    &__mot#{$i} {
+      opacity: 0;
+      color: $couleur;
+      animation: anim-mots $temps-mot $temps-mot * $i;
+      animation-fill-mode: forwards;
+    }
   }
 }
 
