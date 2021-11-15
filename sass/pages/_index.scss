@@ -9,10 +9,15 @@
   align-items: center;
   font-family: "Shrikhand", cursive;
   font-size: 4rem;
-  animation: anim-boite 1s $temps-mot * 3 forwards;
+  animation: anim-boite-fin 1s ($temps-mot * 3 + 1s * $N-intro) forwards;
   background-color: white;
   z-index: 5;
   opacity: 1;
+  &--rotate {
+    display: flex;
+    animation: anim-boite 1s $temps-mot * 3 $N-intro forwards;
+    animation-timing-function: cubic-bezier(0, 1.14, 0, 0.99);
+  }
 
   @each $i, $couleur in (0, $couleur-primaire), (1, $couleur-secondaire),
     (2, $couleur-tertiaire)
@@ -20,7 +25,9 @@
     &__mot#{$i} {
       opacity: 0;
       color: $couleur;
-      animation: anim-mots $temps-mot $temps-mot * $i;
+      animation: anim-mots $temps-mot;
+      animation-delay: $temps-mot * $i;
+      /* animation-iteration-count: $N-intro; */
       animation-fill-mode: forwards;
     }
   }
@@ -82,9 +89,10 @@
 /* section fonctionnement */
 
 .fonctionnement {
+  margin: 20px;
   &__titre {
     text-align: left;
-    margin: 40px 0px 0px 20px;
+    margin: 40px 0px 0px 0px;
     @include desk {
       @include centrer-contenu;
     }
@@ -104,12 +112,17 @@
   display: flex;
   align-items: center;
   background-color: $fond;
-  margin: 30px 20px 30px 20px;
+  margin: 30px 0px 30px 0px;
   border-radius: 2rem;
   box-shadow: 1px 4px 10px $box-shadow;
   justify-content: center;
   position: relative;
   flex: 1;
+  &__milieu {
+    @include desk() {
+      margin: 30px 20px 30px 20px;
+    }
+  }
   p {
     padding: 10px 0 10px 0;
   }

@@ -28,6 +28,11 @@ a {
 }
 @keyframes anim-boite {
   100% {
+    transform: rotate(720deg);
+  }
+}
+@keyframes anim-boite-fin {
+  100% {
     opacity: 0;
     transform: scale(0) rotate(720deg);
   }
@@ -46,7 +51,6 @@ a {
   }
   100% {
     opacity: 1;
-    /* transform: scaleX(1) scaleY(1); */
   }
 }
 @keyframes anim-plats {
@@ -189,27 +193,38 @@ footer ul li a {
   align-items: center;
   font-family: "Shrikhand", cursive;
   font-size: 4rem;
-  animation: anim-boite 1s 2.1s forwards;
+  animation: anim-boite-fin 1s 6.1s forwards;
   background-color: white;
   z-index: 5;
   opacity: 1;
 }
+.boite-intro--rotate {
+  display: flex;
+  animation: anim-boite 1s 2.1s 4 forwards;
+  animation-timing-function: cubic-bezier(0, 1.14, 0, 0.99);
+}
 .boite-intro__mot0 {
   opacity: 0;
   color: #9356dc;
-  animation: anim-mots 0.7s 0s;
+  animation: anim-mots 0.7s;
+  animation-delay: 0s;
+  /* animation-iteration-count: $N-intro; */
   animation-fill-mode: forwards;
 }
 .boite-intro__mot1 {
   opacity: 0;
   color: #ff79da;
-  animation: anim-mots 0.7s 0.7s;
+  animation: anim-mots 0.7s;
+  animation-delay: 0.7s;
+  /* animation-iteration-count: $N-intro; */
   animation-fill-mode: forwards;
 }
 .boite-intro__mot2 {
   opacity: 0;
   color: #99e2d0;
-  animation: anim-mots 0.7s 1.4s;
+  animation: anim-mots 0.7s;
+  animation-delay: 1.4s;
+  /* animation-iteration-count: $N-intro; */
   animation-fill-mode: forwards;
 }
 
@@ -271,9 +286,12 @@ footer ul li a {
 }
 
 /* section fonctionnement */
+.fonctionnement {
+  margin: 20px;
+}
 .fonctionnement__titre {
   text-align: left;
-  margin: 40px 0px 0px 20px;
+  margin: 40px 0px 0px 0px;
 }
 @media screen and (min-width: 1000px) {
   .fonctionnement__titre {
@@ -300,12 +318,17 @@ footer ul li a {
   display: flex;
   align-items: center;
   background-color: #f6f6f6;
-  margin: 30px 20px 30px 20px;
+  margin: 30px 0px 30px 0px;
   border-radius: 2rem;
   box-shadow: 1px 4px 10px #c5c5c5;
   justify-content: center;
   position: relative;
   flex: 1;
+}
+@media screen and (min-width: 1000px) {
+  .vignette-fonctionnement__milieu {
+    margin: 30px 20px 30px 20px;
+  }
 }
 .vignette-fonctionnement p {
   padding: 10px 0 10px 0;
