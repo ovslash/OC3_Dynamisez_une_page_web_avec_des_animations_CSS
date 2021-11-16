@@ -14,4 +14,6 @@ $breakpoints: (
   tablette: 600px,
   desk: 1000px,
 );
-$N-intro: 4;
+
+/* nombre de rotation du titre dans le loader pour ajuster au chargement */
+$N-intro: 0;
