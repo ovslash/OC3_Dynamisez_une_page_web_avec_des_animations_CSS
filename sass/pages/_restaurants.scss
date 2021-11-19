@@ -144,3 +144,6 @@
 .e3 {
   @include arrivee_plats(1);
 }
+.e4 {
+  @include arrivee_plats(1.5);
+}

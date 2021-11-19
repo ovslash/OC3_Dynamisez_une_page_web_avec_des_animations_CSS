@@ -568,6 +568,10 @@ footer ul li a {
   animation: anim-plats 0.5s 0.5s ease-in-out both;
 }
 
+.e4 {
+  animation: anim-plats 0.5s 0.75s ease-in-out both;
+}
+
 /* ------------------------------------------------------------------------- */
 
 /*# sourceMappingURL=style.css.map */
