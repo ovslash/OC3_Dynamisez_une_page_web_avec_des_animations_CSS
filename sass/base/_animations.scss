@@ -1,3 +1,5 @@
+/* chargement */
+
 @keyframes anim-mots {
   0% {
     opacity: 0;
@@ -27,6 +29,8 @@
     transform: scale(0) rotate(720deg);
   }
 }
+
+/* fin chargement */
 
 @keyframes favoris {
   70% {

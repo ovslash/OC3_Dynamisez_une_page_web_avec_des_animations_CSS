@@ -1,9 +1,10 @@
 $box-shadow: #c5c5c5;
 $fond: #f6f6f6;
+
 $couleur-primaire: #9356dc;
 $couleur-secondaire: #ff79da;
 $couleur-tertiaire: #99e2d0;
-$temps-mot: 0.7s;
+
 $temps-plats: 0.5s;
 
 $bouton-couleur: linear-gradient(
@@ -19,3 +20,4 @@ $breakpoints: (
 
 /* nombre de rotation du titre dans le loader pour ajuster au chargement */
 $N-intro: 0;
+$temps-mot: 0.7s;

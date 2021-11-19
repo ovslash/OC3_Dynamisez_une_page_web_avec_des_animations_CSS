@@ -16,6 +16,7 @@ a {
   text-decoration: none;
 }
 
+/* chargement */
 @keyframes anim-mots {
   0% {
     opacity: 0;
@@ -39,6 +40,7 @@ a {
     transform: scale(0) rotate(720deg);
   }
 }
+/* fin chargement */
 @keyframes favoris {
   70% {
     opacity: 1;
