@@ -89,6 +89,7 @@
 
       &__plat {
         flex: 1;
+        overflow: hidden;
         &__titre {
           margin: 0;
           white-space: nowrap;

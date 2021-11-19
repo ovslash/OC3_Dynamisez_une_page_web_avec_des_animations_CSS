@@ -514,6 +514,7 @@ footer ul li a {
 }
 .restaurant__menu__vignette__plat {
   flex: 1;
+  overflow: hidden;
 }
 .restaurant__menu__vignette__plat__titre {
   margin: 0;
