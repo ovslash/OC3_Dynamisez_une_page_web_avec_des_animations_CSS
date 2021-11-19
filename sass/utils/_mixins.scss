@@ -12,7 +12,7 @@
   }
 }
 
-/* pour l'arrivée des plats */
+/* pour l'arrivée des plats */ /* MIXIN AVEC ARGUMENT <-------------------- */
 @mixin arrivee_plats($ordre) {
   animation: anim-plats $temps-plats $temps-plats * $ordre ease-in-out both;
 }

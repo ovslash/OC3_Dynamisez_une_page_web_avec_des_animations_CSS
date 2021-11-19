@@ -144,12 +144,3 @@
 .e3 {
   @include arrivee_plats(1);
 }
-
-@each $v, $p in (1, "arrivee_plats(0)"), (2, "arrivee_plats(0.5)"),
-  (3, "arrivee_plats(1)")
-{
-  .e#{$v} {
-    #{$p} {
-    }
-  }
-}
