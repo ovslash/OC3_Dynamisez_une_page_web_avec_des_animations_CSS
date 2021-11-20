@@ -1,4 +1,4 @@
-/* chargement */
+/* loader de la page d'intro */
 
 @keyframes anim-mots {
   0% {
@@ -30,8 +30,9 @@
   }
 }
 
-/* fin chargement */
+/* fin loader de la page d'intro */
 
+/* bouton favoris */
 @keyframes favoris {
   70% {
     opacity: 1;
@@ -49,7 +50,9 @@
     opacity: 1;
   }
 }
+/* fin bouton favoris */
 
+/*  arrivée plat dans les pages restaurants */
 @keyframes anim-plats {
   0% {
     opacity: 0;
