@@ -459,6 +459,12 @@ footer ul li a {
   right: 40px;
 }
 @media screen and (min-width: 1000px) {
+  .restaurant__titre__favoris--actif {
+    position: relative;
+    right: 52px;
+  }
+}
+@media screen and (min-width: 1000px) {
   .restaurant__menus {
     display: flex;
     text-align: center;

@@ -29,6 +29,10 @@
       &--actif {
         position: absolute;
         right: 40px;
+        @include desk() {
+          position: relative;
+          right: 52px;
+        }
       }
     }
   }
