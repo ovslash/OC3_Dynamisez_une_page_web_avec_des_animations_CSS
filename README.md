@@ -6,10 +6,10 @@
 
 Projet 3 OPENCLASSROOMS - Formation Développeur Web
 
-But : Réaliser un site mobile first répertoriant les menus de 4 restaurants gastronomiques parisiens et permettant de composer son menu en ligne.
-
-Intégrer la maquette mobile en HTML et CSS, mise en page libre sur tablette et desktop
-Utiliser animations CSS et SASS
+But : 
+- Réaliser un site mobile first répertoriant les menus de 4 restaurants gastronomiques parisiens et permettant de composer son menu en ligne.
+- Intégrer la maquette mobile en HTML et CSS, mise en page libre sur tablette et desktop
+- Utiliser animations CSS et SASS
 
 
 ------------------
