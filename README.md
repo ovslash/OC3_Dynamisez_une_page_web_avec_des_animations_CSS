@@ -24,6 +24,14 @@ Assurer la cohérence graphique d'un site web
 
 ------------------
 
+<h2>Technologies</h2>
+
+- HTML5
+- CSS3
+- SASS
+
+------------------
+
 <h2>Site live</h2>
 
 https://ovslash.github.io/OC3_Dynamisez_une_page_web_avec_des_animations_CSS/
