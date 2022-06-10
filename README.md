@@ -31,4 +31,5 @@ https://ovslash.github.io/OC3_Dynamisez_une_page_web_avec_des_animations_CSS/
 ------------------
 
 <h2>Maquettes fournies</h2>
-![maquettes p3](https://user-images.githubusercontent.com/81557814/173060408-50a761af-e510-46b5-a883-a410b11b1c96.png)
+
+![maquettes p3](https://user-images.githubusercontent.com/81557814/173060638-daacb15e-85b2-45c7-a074-bc67856fdc8b.png)
